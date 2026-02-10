@@ -1,5 +1,5 @@
 extends Node
 
 func _ready():
-    print("Code test passed")
+    print("This shows that the code test passed")
     get_tree().quit()
