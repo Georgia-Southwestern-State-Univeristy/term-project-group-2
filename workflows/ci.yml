@@ -1,1 +1,24 @@
+name: Godot CI
 
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      # Install Godot (headless)
+      - name: Setup Godot
+        uses: firebelley/godot-headless-action@v2
+        with:
+          godot-version: "4.0"
+
+      # Lint / syntax check
+      - name: Check GDScript syntax
+        run: godot --headless --script-check
+
+      # Run tiny automated test
+      - name: Run minimal test
+        run: godot --headless --quit --path . --script tests/test_smoke.gd
