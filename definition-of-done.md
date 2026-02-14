@@ -1,6 +1,6 @@
 # Definition of Done
 
-A feature is considered DONE when all items below are completed:
+A project is considered DONE when all items below are completed:
 
 ## Git / Workflow
 Branching: Work is completed on a short-lived feature branch. No direct commits to main
