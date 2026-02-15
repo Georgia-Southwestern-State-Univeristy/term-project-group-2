@@ -8,10 +8,10 @@ This project uses Godot 3.2.2
 
 ## Setup
 
-1. pip install "gdtoolkit==3.*"
-2. Install Godot 3.x
-3. Clone the repository
-4. Open project.godot in Godot
+1. Install Godot Engine 3.2.2
+  https://godotengine.org/download/archive/3.2.2-stable/
+2. Clone the repository
+3. Open project.godot in Godot
 
 ## Running the Project
 
