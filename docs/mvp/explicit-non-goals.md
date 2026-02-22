@@ -1,7 +1,8 @@
-Explicit non-gorals (Out of scope for MVP)
+Explicit non-goals (Out of scope for MVP)
 
 Summary: It is important for the team to consider user satisfaction; however, not all requested features will be included in the initial release. 
-The Minimum Viable Product (MVP) focuses exclusively on core gameplay mechanics, including object spawning, collision detection, and score and attempts tracking. 
+The Minimum Viable Product (MVP) focuses exclusively on core 2D game mechanics, including object spawning, energy collection, and score and remaining lives. 
+
 Features that are out of scope include multiplayer functionality, advanced performance optimization, an advanced user interface and persistent storage.
 
 - Gameplay scope
