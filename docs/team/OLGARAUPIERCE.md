@@ -1,0 +1,5 @@
+Your role - Rau Pierce, Olga: Lead game developer, responsible for coding and core features
+
+Your availability window (days/times) - Rau Pierce, Olga: Tuesday – Saturday After 7 PM
+
+One engineering principle you want the team to follow - Software development, testing and reliability
