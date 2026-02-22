@@ -1,1 +1,12 @@
-api file
+Clearly define request + response formats
+- This is a GoDot engine local game.
+Define data types 
+- String, int, boolean, date time, float
+Define required vs optional fields
+- Primary Keys: - 
+  - Game_session_id
+  - Player_id
+  - Falling_object_id
+  - Ship_id
+Rquired: - 
+- All other fields are required as per the model
