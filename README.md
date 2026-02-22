@@ -35,8 +35,11 @@ gdlint .
 │  └─ workflows/                         # GitHub Actions workflows
 │     └─  ci.yml                         # Automated CI pull request check to review the changes for an approval
 ├─ SpaceHunter_game/                     # Program files for game built in Godot
-│  └─ .import/                           # Images required for the game
-├─ assignment/                           # Assignment files as submitted for the week in .docx format
+│  ├─ .import/                           # Images required for the game
+│  ├─ └─ ..                              # Game image files
+│  ├─ ../                                # Game program files
+├─ assignment/                           
+│  └─ GROUP PROJECT..                    # Assignment files submitted for the week in .docx format                                   
 ├─ docs/                                 # Project documents in respective folders
 │  ├─ adr/                               
 │  │  ├─ ADR-001.md                      # Architecture diagram of the game
@@ -50,12 +53,12 @@ gdlint .
 │  │  ├─ mvp.md                          # MVP defined
 │  │  ├─ scope-lock.md                   # MVP stories, scope lock, demo script outline and risk defined
 │  ├─ team/
-│  │  ├─ definition-of-done.md           # Definition of done about the project                    
 │  │  ├─ MARIOPEHAIRE.md                 # Mario's role, availability and one engineering priciple he wnats to follow
-│  │  ├─ OLGARAUPIERCE.md                # Olga's role, availability and one engineering priciple he wnats to follow
+│  │  ├─ OLGARAU.md                      # Olga's role, availability and one engineering priciple he wnats to follow
 │  │  ├─ RAJESHAGGARWAL.md               # Rajesh's role, availability and one engineering priciple he wnats to follow
+│  │  ├─ definition-of-done.md           # Definition of done about the project                    
 ├─ tests/                                
-│  ├─ test_code.gd/                      # Test code file create for dummy testing
+│  ├─ test_code.gd                       # Test code file create for dummy testing
 ├─ CONTRIBUTING.MD                       # Contributing guidelines and conventions
 ├─ PULL_REQUEST_TEMPLATE.MD              # Pull request checklist
 └─ READMD.MD                             # This document
