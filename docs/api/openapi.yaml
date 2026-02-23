@@ -1,5 +1,24 @@
 Clearly define request + response formats
-- This is a GoDot engine local game.
+- This is a Godot engine local game.
+
+Request/Response Payload:
+Request Body
+Energy collected event
+{
+  "event_type": "ENERGY_COLLECTED",
+  "object_id": "energy_42",
+  "value": 1,
+  "timestamp": "2024-02-22T12:30:15"
+}
+Response Body
+Updated game state
+{
+  "status": "success",
+  "new_score": 5,
+  "attempts_remaining": 3,
+  "game_state": "playing"
+}
+
 Define data types 
 - String, int, boolean, date time, float
 Define required vs optional fields
