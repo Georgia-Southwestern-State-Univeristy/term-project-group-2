@@ -28,6 +28,24 @@ Run:
 gdformat .
 gdlint .
 
+## How to Run and Verify the Energy Catch MVP Path
+Run the Project
+Install Godot 3.2.2
+Clone the repository
+Open the project in Godot
+Run the main scene
+
+Verify the MVP Behavior
+To test the Energy Catch behavior:
+Move the platform using left/right keys
+Catch a falling Energy object
+
+Observe that:
+The score increases by 1
+The Energy object disappears
+The game remains in "playing" state
+This verifies the controller → service → state update → UI response path.
+
 ## Repository Structure
 ```
 .
