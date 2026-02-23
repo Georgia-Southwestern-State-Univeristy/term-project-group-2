@@ -53,7 +53,7 @@ gdlint .
 │  │  ├─ mvp.md                          # MVP defined
 │  │  ├─ scope-lock.md                   # MVP stories, scope lock, demo script outline and risk defined
 │  ├─ team/
-│  │  ├─ MARIOPEHAIRE.md                 # Mario's role, availability and one engineering priciple he wnats to follow
+│  │  ├─ MARIOP.md                       # Mario's role, availability and one engineering priciple he wnats to follow
 │  │  ├─ OLGARAU.md                      # Olga's role, availability and one engineering priciple he wnats to follow
 │  │  ├─ RAJESHAGGARWAL.md               # Rajesh's role, availability and one engineering priciple he wnats to follow
 │  │  ├─ definition-of-done.md           # Definition of done about the project                    
