@@ -2,30 +2,30 @@
 
 ## **MVP User Stories**
 
-As a **space pilot**, I want to **control** a spaceship using left and right key, so that I can **collect energy and avoid asteroids**, change my direction of travel.
+DONE - As a **space pilot**, I want to **control** a spaceship using left and right key, so that I can **collect energy and avoid asteroids**, change my direction of travel.
     - Acceptance Criteria
 1.	Left/Right: The player can movethe ship in left and right  direction using an input key.
 2.	Visual effect: The ship moves left/right.
 
-As a **player**, I want to **collect energy** from my spaceship, so that I can **get more score** and survive the game. 
+DONE - As a **player**, I want to **collect energy** from my spaceship, so that I can **get more score** and survive the game. 
     - Acceptance Criteria
 1.	Input Trigger: Pressing left and right arrow key moves the space ship.
 2.	Collision: When a space ship  hits an asteroid, score is reduced.
 3.	Collision: When a space ship  hits anenergy, score is increased.
 
-As a **player**, I want asteroids to **fall down** upon spawning, so that the game-play is **unpredictable and challenging**. 
+DONE - As a **player**, I want asteroids to **fall down** upon spawning, so that the game-play is **unpredictable and challenging**. 
     - Acceptance Criteria
 1.	Randomized Initial Direction: When an asteroid spawns, it must be assigned a random position of movement.
 2.	Constant Movement: Once initialized, the asteroid must maintain its speed and direction.
 
-As a **player**, I want to **experience** when collecting energy and avoid astroids so that the game feels **challenging** and my survival depends on skillful navigation
+DONE - As a **player**, I want to **experience** when collecting energy and avoid astroids so that the game feels **challenging** and my survival depends on skillful navigation
     - Acceptance Criteria
 1.	Life Reduction: Decrease the current life count by one immediately upon missing the energy.
 2.	Score change: Increase the score count immediately catching the energy and decrease upon catching the asteroids.
 3.	Visual Feedback: Provide a clear on-screen indicator when a life is lost and score is changed.
 4.	Game Over Trigger: Automatically transition to the Game Over screen.
 
-As a **player**, I want to **see my current score** on the main game screen, so that I **know how well I am doing** without navigating away from the game. 
+DONE - As a **player**, I want to **see my current score** on the main game screen, so that I **know how well I am doing** without navigating away from the game. 
     - Acceptance Criteria
 1.	Visibility: The current score is displayed in a consistent, clearly visible location on the main player dashboard.
 2.	Accuracy: The score displayed accurately reflects the total points earned from completed actions in real-time or upon screen refresh.
@@ -61,6 +61,8 @@ Features that are out of scope include multiplayer functionality, advanced perfo
 ## Demo script outline
 - Game environment screen
 - Game over screen
+- Game screen with space ship, energy and asteroids
+- Game screen with score and attempts
 
 ## Risks
 Risks (technical + scope + team)
