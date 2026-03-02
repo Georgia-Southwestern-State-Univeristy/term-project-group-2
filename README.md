@@ -77,6 +77,7 @@ This verifies the controller → service → state update → UI response path.
 │  │  ├─ definition-of-done.md           # Definition of done about the project                    
 ├─ tests/                                
 │  ├─ test_code.gd                       # Test code file create for dummy testing
+│  ├─ test_game_rules.gd                 # Test code file showing - 2 “happy path” tests, 1 “failure path” test (missing resource), 1 boundary test (service or data layer)
 ├─ CONTRIBUTING.MD                       # Contributing guidelines and conventions
 ├─ PULL_REQUEST_TEMPLATE.MD              # Pull request checklist
 └─ READMD.MD                             # This document
