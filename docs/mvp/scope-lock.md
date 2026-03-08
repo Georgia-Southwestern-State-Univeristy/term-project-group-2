@@ -31,6 +31,31 @@ DONE - As a **player**, I want to **see my current score** on the main game scre
 2.	Accuracy: The score displayed accurately reflects the total points earned from completed actions in real-time or upon screen refresh.
 3.	Default State: If the user has a score of zero, the screen displays "0" rather than being blank.
 
+DONE - As a **player** I want to **start playing quickly** so that I **don't waste time by clicking buttons**
+    - Acceptance Criteria: -
+1- Game loads with no setup options
+2- Game loads for 1 player only
+3- Game starts with one click once loaded
+
+DONE - As a **player**, it is important for me to be able to **use both key sets for left and right: "A" and "D" and the arrows**, so that it will be **easier to switch between my keyboards**, and one of them is a mini version with not-so-convenient arrow keys placement.
+    - Acceptance Criteria: -
+1- Switch between arrow and keyboard instantly
+2- Control using either arrow or A & D
+
+In Progress - As a **player**, I would like to see **my highest score** by the end of the game so that **I know how I did**.
+    - Acceptance Criteria: -
+1- Once the game is over, inform player of the last score during the session.
+2- Display score until next click
+
+READY - As a **player**, I want to **fully immerse myself in the game experience**, so that I can **get the real feel of the game**.
+    - Acceptance Criteria: -
+1- Added animations, such as the screen shaking whenever an asteroid collides with my ship
+
+READY - As a **player**, I would like the ship to have an **appropriate speed** so that it is **not too fast** since the game would feel much easier.
+    - Acceptance Criteria: -
+1- I don't want sprites to be too slow when playing.
+2- Gameplay balance between energy and asteroids speed should be constant.
+
 
 ## Explicit non-goals (Out of scope for MVP)
 
