@@ -72,6 +72,7 @@ This verifies the controller → service → state update → UI response path.
 │  │  ├─ demo-readiness.md               # Demo readiness plan
 │  │  ├─ explicit-non-goals.md           # Explicit non goals defined in the document
 │  │  ├─ midterm-demo.md                 # Mide-term demo presentaion link and video link with team, date.
+│  │  ├─ midterm-snapshop.md             # Midterm snapshot showing what we are delivering during midterm.
 │  │  ├─ mvp-checklist.md                # MVP checklist showing done and pending stories.
 │  │  ├─ mvp.md                          # MVP defined
 │  │  ├─ release-notes-midterm.md        # Midterm release notes for MVP of space hunter game
