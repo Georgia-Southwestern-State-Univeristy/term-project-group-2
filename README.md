@@ -64,11 +64,17 @@ This verifies the controller → service → state update → UI response path.
 │  │  └─ ADR-001.md.jpeg                 # Architecture diagram image of the game
 │  ├─ api/                               
 │  │  ├─ openapi.yaml                    # Contract with endpoints tied to MVP 
+│  ├─ beta/                               
+│  │  ├─ beta-plan.md                    # Beta-plan for the week 9 - 12.
 │  ├─ data/                               
 │  │  ├─ model.md                        # ERD with List entities + key fields + relationships and model diagram image link
 │  ├─ mvp/                               
+│  │  ├─ demo-readiness.md               # Demo readiness plan
 │  │  ├─ explicit-non-goals.md           # Explicit non goals defined in the document
+│  │  ├─ midterm-demo.md                 # Mide-term demo presentaion link and video link with team, date.
+│  │  ├─ mvp-checklist.md                # MVP checklist showing done and pending stories.
 │  │  ├─ mvp.md                          # MVP defined
+│  │  ├─ release-notes-midterm.md        # Midterm release notes for MVP of space hunter game
 │  │  ├─ scope-lock.md                   # MVP stories, scope lock, demo script outline and risk defined
 │  ├─ team/
 │  │  ├─ MARIOP.md                       # Mario's role, availability and one engineering priciple he wnats to follow
