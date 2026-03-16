@@ -76,6 +76,7 @@ func _on_platform_body_entered(body):
 	Logger.info("Energy object collected (+1 point)")
 	# make spawns faster as score grows (but keep a minimum)
 	#SPEED
+	drop_speed = min(400.0, 150.0 + score * 1.5)
 	Logger.info("Increased Speed")
 func _on_Catcher_body_entered(body):
 	if game_over:
