@@ -66,6 +66,10 @@ This verifies the controller → service → state update → UI response path.
 │  │  ├─ openapi.yaml                    # Contract with endpoints tied to MVP 
 │  ├─ beta/                               
 │  │  ├─ beta-plan.md                    # Beta-plan for the week 9 - 12.
+│  │  ├─ bug-triage.md                   # Bug triage document
+│  │  ├─ observability.md                # Project code observability to identify issues and failures
+│  │  ├─ week9-pr-index.md               # Week 9 pr-index to show shipped items
+│  │  ├─ week9-sprint.md                 # Week 9 sprint goal and commitment to deliver
 │  ├─ data/                               
 │  │  ├─ model.md                        # ERD with List entities + key fields + relationships and model diagram image link
 │  ├─ mvp/                               
