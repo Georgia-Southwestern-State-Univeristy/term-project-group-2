@@ -119,6 +119,7 @@ func restart_game():
 
 func _show_scoreboard():
 
+    # Scoreboard added
 	$Menu/Scoreboard/VBox/FinalScore.text = "Final Score: %d" % score
 	$Menu/Scoreboard/VBox/RestartHint.text = "Press ENTER to play again"
 	$Menu/Scoreboard.visible = true
