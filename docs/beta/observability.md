@@ -42,7 +42,7 @@ Copyright 2018-2019, SpockerDotNet LLC
 Version 3.2-R4
  
 ** Console Appender Initialized **
- 
+``` 
 INFO       1        Game started!
 INFO       2        Energy object collected (+1 point)
 INFO       3        Increased Speed
@@ -75,4 +75,4 @@ INFO       29       Energy object collected (+1 point)
 INFO       30       Increased Speed
 INFO       31       Missed energy object (-1 attempt)
 INFO       32       Game Over. Final Score: 10
-
+```
