@@ -22,6 +22,8 @@ func _ready():
 		star.rect_position = Vector2(rand_range(0, 1024), rand_range(0, 600))
 		star.color = Color(1, 1, 1, rand_range(0.3, 1.0))
 		#BG Stars
+		$Background/Stars.add_child(star)
+		stars.append({"node": star, "speed": rand_range(10, 40)})
 
 
 
@@ -103,8 +105,13 @@ func _on_Catcher_body_entered(body):
 func _process(delta):
 	if game_over and Input.is_action_just_pressed("restart"):
 		restart_game()
-		
-# BG and stars
+
+		#A non-static BG
+	for s in stars:
+		s["node"].rect_position.y += s["speed"] * delta
+		if s["node"].rect_position.y > 600:
+			s["node"].rect_position.y = -4
+			s["node"].rect_position.x = rand_range(0, 1024)
 
 func restart_game():
 	get_tree().reload_current_scene()
