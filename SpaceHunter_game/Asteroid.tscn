@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Asteroid.gd" type="Script" id=1]
-[ext_resource path="res://asteroid1.png" type="Texture" id=2]
+[ext_resource path="res://asteroid_pixelart.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 25.2741
@@ -13,6 +13,6 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="asteroid" type="Sprite" parent="."]
-position = Vector2( -0.667419, -0.333709 )
-scale = Vector2( 1.09101, 1.07584 )
+position = Vector2( 0.697738, -1.69804 )
+scale = Vector2( 0.338592, 0.333884 )
 texture = ExtResource( 2 )

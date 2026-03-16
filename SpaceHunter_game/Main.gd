@@ -4,15 +4,25 @@ export(PackedScene) var GoodDrop
 export(PackedScene) var BadDrop
 export(float) var bad_chance = 0.15
 var score = 0
-var life = 7
+var life = 5
 var game_over = false
-
+var stars = []
+var drop_speed = 150.0
 
 func _ready():
 	randomize()
 	$Menu/Score.text = "Score: 0"
-	$Menu/Life.text = "Attempts: 7"
+	$Menu/Life.text = "Attempts: 5"
 	$Menu/Message.hide()
+	for i in 80:
+		var star = ColorRect.new()
+		var sz = rand_range(1, 2.5)
+		star.rect_size = Vector2(sz, sz)
+		star.rect_position = Vector2(rand_range(0, 1024), rand_range(0, 600))
+		star.color = Color(1, 1, 1, rand_range(0.3, 1.0))
+		$Background/Stars.add_child(star)
+		stars.append({"node": star, "speed": rand_range(10, 40)})
+
 
 func _on_CrystalTimer_timeout():
 	if game_over:
@@ -25,7 +35,9 @@ func _on_CrystalTimer_timeout():
 	var drop = scene.instance()
 	add_child(drop)
 	drop.add_to_group("drops")
-
+	drop.linear_velocity = Vector2(0, drop_speed)
+	#drop.add_to_group("drops")
+	#drop.speed = drop_speed
 	#SAFE SPAWN (works with circle and rectangle shapes)
 
 	var cs = drop.get_node("CollisionShape2D")
@@ -59,7 +71,7 @@ func _on_platform_body_entered(body):
 	body.queue_free()
 	$Menu/Score.text = "Score: " +str(score)
 	# make spawns faster as score grows (but keep a minimum)
-	$CrystalTimer.wait_time = max(0.25, 1.0 - int(score / 10) * 0.1)
+	drop_speed = min(400.0, 150.0 + score * 1.5)
 
 func _on_Catcher_body_entered(body):
 	if game_over:
@@ -70,25 +82,37 @@ func _on_Catcher_body_entered(body):
 	if body.has_method("get") and body.get("points") != null:
 		if body.points > 0:
 			life -= 1
-			$Menu/Life.text = "Life: " + str(life)
+			$Menu/Life.text = "Attempts: " + str(life)
 	else:
 		life -= 1
-		$Menu/Life.text = "Life: " + str(life)
+		$Menu/Life.text = "Attempts: " + str(life)
 
 	body.queue_free()
 
 	if life < 1:
 		game_over = true
-		$Menu/Message.show()
+		#$Menu/Message.show()
 		$CrystalTimer.stop()
 		var drops = get_tree().get_nodes_in_group("drops")
 		for child in drops:
 			child.queue_free()
-			
+		_show_scoreboard()
 
 func _process(delta):
 	if game_over and Input.is_action_just_pressed("restart"):
 		restart_game()
+		
+	for s in stars:
+		s["node"].rect_position.y += s["speed"] * delta
+		if s["node"].rect_position.y > 600:
+			s["node"].rect_position.y = -4
+			s["node"].rect_position.x = rand_range(0, 1024)	
 
 func restart_game():
 	get_tree().reload_current_scene()
+	
+func _show_scoreboard():
+
+	$Menu/Scoreboard/VBox/FinalScore.text = "Final Score: %d" % score
+	$Menu/Scoreboard/VBox/RestartHint.text = "Press ENTER to play again"
+	$Menu/Scoreboard.visible = true	
