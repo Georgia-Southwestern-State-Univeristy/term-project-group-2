@@ -95,5 +95,11 @@
 - **Scoreboard not appearing at end of game**: Add Scoreboard node, Type: Control. Under the node add Background, and another control node with Title, Final Score and Restart. Add the code to the Main script.
 - **Scoreboard text not visible**: Ensure that the "Custom Font" is chosen and the Font is actually provided (the correct path).
 ## Evidence: link to issues + PRs that close them
+**Link to issues**
+- https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/issues/167
+- https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/issues/170
+- https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/issues/175
+
+**PR that close them**
 - Updated Game: https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/tree/main/SpaceHunter_game
 - PR Link: https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/179/changes/967f506861df79f4f4b6f624a739f5e4d226f0c1 or https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/179
