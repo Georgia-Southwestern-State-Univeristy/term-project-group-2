@@ -14,7 +14,7 @@ var asteroids_since_message = 0
 var is_typing = false
 var shake_intensity = 0.0
 var shake_duration = 0.0
-
+var admin_mode = false
 
 var orb_messages = [
 	"Great job!",
@@ -154,8 +154,9 @@ func _on_Catcher_body_entered(body):
 		return
 	if body.has_method("get") and body.get("points") != null:
 		if body.points > 0:
-			life -= 1
-			$Menu/Life.text = "Attempts: " + str(life)
+			if not admin_mode:
+				life -= 1
+				$Menu/Life.text = "Attempts: " + str(life)
 
 	body.queue_free()
 	asteroids_since_message += 1
@@ -180,6 +181,15 @@ func _on_MessengerTimer_timeout():
 func _process(delta):
 	if game_over and Input.is_action_just_pressed("restart"):
 		restart_game()
+	if Input.is_key_pressed(KEY_CONTROL) and Input.is_key_pressed(KEY_SHIFT) and Input.is_action_just_pressed("ui_accept"):
+		admin_mode = !admin_mode
+		if admin_mode:
+			show_message("ADMIN MODE ON")
+		else:
+			show_message("ADMIN MODE OFF")
+	if admin_mode and Input.is_action_just_pressed("ui_up"):
+		score += 50
+		$Menu/Score.text = "Score: " + str(score)
 		
 	for s in stars:
 		s["node"].rect_position.y += s["speed"] * delta
@@ -196,6 +206,9 @@ func _process(delta):
 	else:
 		shake_duration = 0.0
 		$Camera2D.offset = Vector2.ZERO
+	
+
+
 
 func restart_game():
 	get_tree().reload_current_scene()
