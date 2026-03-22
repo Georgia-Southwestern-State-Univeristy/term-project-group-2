@@ -62,13 +62,8 @@ _global_script_class_icons={
 
 [application]
 
-<<<<<<< Updated upstream
-config/name="SpaceGo"
-run/main_scene="res://Main.tscn"
-=======
 config/name="SpaceHunter"
 run/main_scene="res://MainMenu.tscn"
->>>>>>> Stashed changes
 config/icon="res://icon.png"
 
 [display]

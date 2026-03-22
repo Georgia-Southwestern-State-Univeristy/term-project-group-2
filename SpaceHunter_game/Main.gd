@@ -205,3 +205,7 @@ func _show_scoreboard():
 	$Menu/Scoreboard/VBox/FinalScore.text = "Final Score: %d" % score
 	$Menu/Scoreboard/VBox/RestartHint.text = "Press ENTER to play again"
 	$Menu/Scoreboard.visible = true	
+
+
+func _on_ExitButton_pressed():
+	get_tree().quit() # Replace with function body.
