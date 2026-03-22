@@ -68,6 +68,7 @@ This verifies the controller → service → state update → UI response path.
 │  │  ├─ beta-plan.md                    # Beta-plan for the week 9 - 12.
 │  │  ├─ bug-triage.md                   # Bug triage document
 │  │  ├─ observability.md                # Project code observability to identify issues and failures
+│  │  ├─ week10-pr-sprint.md             # Week 10 sprint goal and commitment to deliver
 │  │  ├─ week9-pr-index.md               # Week 9 pr-index to show shipped items
 │  │  ├─ week9-sprint.md                 # Week 9 sprint goal and commitment to deliver
 │  ├─ data/                               
@@ -81,6 +82,9 @@ This verifies the controller → service → state update → UI response path.
 │  │  ├─ mvp.md                          # MVP defined
 │  │  ├─ release-notes-midterm.md        # Midterm release notes for MVP of space hunter game
 │  │  ├─ scope-lock.md                   # MVP stories, scope lock, demo script outline and risk defined
+│  ├─ security/                               
+│  │  ├─ auth.md                         # 
+│  │  ├─ week10-security-notes           # Week 10 security notes showing the validation and security
 │  ├─ team/
 │  │  ├─ MARIOP.md                       # Mario's role, availability and one engineering priciple he wnats to follow
 │  │  ├─ OLGARAU.md                      # Olga's role, availability and one engineering priciple he wnats to follow
