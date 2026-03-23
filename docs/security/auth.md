@@ -73,8 +73,14 @@ var admin_mode = false
 ```
 There is no way to permanently enable admin mode.
 
-
 ## PR Links
+
+PR Link: - 
+https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/216
+https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/217
 
 
 ## Demo notes
+
+- Only admin with the access code can enter the admin mode and make changes to the features such as attempt/lives and score.
+- Player cannot play in admin mode permanently. 
