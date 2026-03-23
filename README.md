@@ -69,6 +69,7 @@ This verifies the controller → service → state update → UI response path.
 │  │  ├─ bug-triage.md                   # Bug triage document
 │  │  ├─ observability.md                # Project code observability to identify issues and failures
 │  │  ├─ week10-pr-sprint.md             # Week 10 sprint goal and commitment to deliver
+│  │  ├─ week10-ux.md                    # Week 10 test and usability improvements
 │  │  ├─ week9-pr-index.md               # Week 9 pr-index to show shipped items
 │  │  ├─ week9-sprint.md                 # Week 9 sprint goal and commitment to deliver
 │  ├─ data/                               
