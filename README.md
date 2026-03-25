@@ -68,8 +68,13 @@ This verifies the controller → service → state update → UI response path.
 │  │  ├─ beta-plan.md                    # Beta-plan for the week 9 - 12.
 │  │  ├─ bug-triage.md                   # Bug triage document
 │  │  ├─ observability.md                # Project code observability to identify issues and failures
-│  │  ├─ week10-pr-sprint.md             # Week 10 sprint goal and commitment to deliver
+│  │  ├─ week10-sprint.md                # Week 10 sprint goal and commitment to deliver
 │  │  ├─ week10-ux.md                    # Week 10 test and usability improvements
+│  │  ├─ week11-ci.md                    # Week 11 CI
+│  │  ├─ week11-e2e.md                   # Week 11 end to end integration
+│  │  ├─ week11-reliability.md           # Week 11 reliability testing
+│  │  ├─ week11-sprint.md                # Week 11 sprint goal and commitment to deliver
+│  │  ├─ week11-status.md                # Week 11 status
 │  │  ├─ week9-pr-index.md               # Week 9 pr-index to show shipped items
 │  │  ├─ week9-sprint.md                 # Week 9 sprint goal and commitment to deliver
 │  ├─ data/                               
