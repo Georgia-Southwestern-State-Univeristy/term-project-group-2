@@ -1,36 +1,25 @@
-# This is a basic workflow to help you get started with Actions
+name: GDScript Unit Tests
 
-name: CI
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  test:
+    name: Run GDScript Unit Tests
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+    - name: Download Godot 3.2.2 Headless from GitHub Releases
+      run: |
+        wget https://github.com/godotengine/godot/releases/download/3.2.2-stable/Godot_v3.2.2-stable_linux_headless.64.zip -O godot.zip
+        unzip godot.zip -d godot-engine
+        chmod +x godot-engine/Godot_v3.2.2-stable_linux_headless.64
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+    - name: Run GDScript Unit Tests (headless)
+      run: |
+        ./godot-engine/Godot_v3.2.2-stable_linux_headless.64 --path . --headless --script addons/gut/gut_cmdln.gd -- -gdir=res://tests
