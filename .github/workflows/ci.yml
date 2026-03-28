@@ -10,16 +10,35 @@ jobs:
   test:
     name: Run GDScript Unit Tests
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        submodules: recursive  
 
-    - name: Download Godot 3.2.2 Headless from GitHub Releases
+    - name: Set UTF-8 locale   
       run: |
-        wget https://github.com/godotengine/godot/releases/download/3.2.2-stable/Godot_v3.2.2-stable_linux_headless.64.zip -O godot.zip
+        sudo apt-get update
+        sudo apt-get install -y locales
+        sudo locale-gen en_US.UTF-8
+        echo "LANG=en_US.UTF-8" >> $GITHUB_ENV
+        echo "LC_ALL=en_US.UTF-8" >> $GITHUB_ENV
+
+    - name: Download Godot Headless (3.5.3 recommended) 
+      run: |
+        wget https://github.com/godotengine/godot/releases/download/3.5.3-stable/Godot_v3.5.3-stable_linux_headless.64.zip -O godot.zip
         unzip godot.zip -d godot-engine
-        chmod +x godot-engine/Godot_v3.2.2-stable_linux_headless.64
+        chmod +x godot-engine/Godot_v3.5.3-stable_linux_headless.64
+
+    - name: Verify GUT exists  
+      run: |
+        ls -R addons || true
 
     - name: Run GDScript Unit Tests (headless)
       run: |
-        ./godot-engine/Godot_v3.2.2-stable_linux_headless.64 --path . --headless --script addons/gut/gut_cmdln.gd -- -gdir=res://tests
+        ./godot-engine/Godot_v3.5.3-stable_linux_headless.64 \
+        --path . \
+        --headless \
+        --script addons/gut/gut_cmdln.gd \
+        -- -gdir=res://tests -gexit
