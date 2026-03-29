@@ -1,4 +1,4 @@
-name: GDScript Unit Tests
+name: Godot 4.2.2 Tests
 
 on:
   push:
@@ -8,18 +8,42 @@ on:
 
 jobs:
   test:
-    name: Run GDScript Unit Tests
+    name: Run GDScript Tests
     runs-on: ubuntu-latest
+
     steps:
+    # 1. Checkout repo
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Download Godot 3.2.2 Headless from GitHub Releases
-      run: |
-        wget https://github.com/godotengine/godot/releases/download/3.2.2-stable/Godot_v3.2.2-stable_linux_headless.64.zip -O godot.zip
-        unzip godot.zip -d godot-engine
-        chmod +x godot-engine/Godot_v3.2.2-stable_linux_headless.64
+    # 2. Cache Godot (speeds up builds)
+    - name: Cache Godot
+      uses: actions/cache@v4
+      with:
+        path: godot-engine
+        key: godot-4.2.2
 
-    - name: Run GDScript Unit Tests (headless)
+    # 3. Download Godot (if not cached)
+    - name: Download Godot 4.2.2
+      if: steps.cache.outputs.cache-hit != 'true'
       run: |
-        ./godot-engine/Godot_v3.2.2-stable_linux_headless.64 --path . --headless --script addons/gut/gut_cmdln.gd -- -gdir=res://tests
+        wget https://github.com/godotengine/godot/releases/download/4.2.2-stable/Godot_v4.2.2-stable_linux.x86_64.zip -O godot.zip
+        unzip godot.zip -d godot-engine
+        chmod +x godot-engine/Godot_v4.2.2-stable_linux.x86_64
+
+    # 4. Import project (CRITICAL for Godot 4)
+    - name: Import project
+      run: |
+        ./godot-engine/Godot_v4.2.2-stable_linux.x86_64 \
+        --headless \
+        --path . \
+        --quit
+
+    # 5. Run tests using GUT
+    - name: Run unit tests
+      run: |
+        ./godot-engine/Godot_v4.2.2-stable_linux.x86_64 \
+        --headless \
+        --path . \
+        --script res://addons/gut/gut_cmdln.gd \
+        -- -gdir=res://tests -gexit
