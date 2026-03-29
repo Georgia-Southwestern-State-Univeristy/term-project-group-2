@@ -23,19 +23,31 @@
 ## Provide evidence:
 - PR links for fixes required to make it work
     - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/239
+    - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/247
       
-- Screenshots or short run notes
+- Short run notes
     - Game launches successfully
     - Player collects coin
     - Score increaments correctly
     - Tested on windows
 
+- Screenshots
+  
+![Debugging process](https://github.com/user-attachments/assets/cf116100-9015-4501-a2ab-849fc976ab61)
+
 - Debug log event
   - Game running
-   
-  - Before collecting coin
-    
-  - After collecting coin (score changed)
+  - Score changes
+
+  - Before
+```
+screenshot attached
+```
+  - After
+```
+screenshot attached
+```
       
 - Link to a passing CI run
     - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/actions/runs/23701305201/job/69045356512
+ 
