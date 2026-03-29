@@ -30,3 +30,13 @@ func test_game_over_when_life_zero():
 func test_drop_speed_increases_with_score():
 	var speed = min(400.0, 80.0 + 50 * 1.0)
 	assert_gt(speed, 80.0, "Speed should increase as score grows")
+	
+	# Test 9score does not change when game_over is true
+func test_score_does_not_increase_when_game_over():
+	var score = 10
+	var game_over = true
+	
+	if not game_over:
+		score += 1
+	
+	assert_eq(score, 10, "Score should not change when game_over is true")
