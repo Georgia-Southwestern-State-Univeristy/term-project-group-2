@@ -8,18 +8,23 @@ on:
 
 jobs:
   test:
-    name: Run GDScript Unit Tests
+    name: Run GDScript Unit Tests (Godot 4.2.2)
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Download Godot 3.2.2 Headless from GitHub Releases
+    - name: Download Godot 4.2.2
       run: |
-        wget https://github.com/godotengine/godot/releases/download/3.2.2-stable/Godot_v3.2.2-stable_linux_headless.64.zip -O godot.zip
+        wget https://github.com/godotengine/godot/releases/download/4.2.2-stable/Godot_v4.2.2-stable_linux.x86_64.zip -O godot.zip
         unzip godot.zip -d godot-engine
-        chmod +x godot-engine/Godot_v3.2.2-stable_linux_headless.64
+        chmod +x godot-engine/Godot_v4.2.2-stable_linux.x86_64
 
-    - name: Run GDScript Unit Tests (headless)
+    - name: Run GUT tests (headless)
       run: |
-        ./godot-engine/Godot_v3.2.2-stable_linux_headless.64 --path . --headless --script addons/gut/gut_cmdln.gd -- -gdir=res://tests
+        ./godot-engine/Godot_v4.2.2-stable_linux.x86_64 \
+        --headless \
+        --path . \
+        --script res://addons/gut/gut_cmdln.gd \
+        -- -gdir=res://tests
