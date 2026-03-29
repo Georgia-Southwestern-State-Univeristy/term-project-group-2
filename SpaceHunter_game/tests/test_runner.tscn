@@ -1,22 +1,22 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://BitcountSingle-SemiBold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://BitcountSingle-SemiBold.ttf" type="FontFile" id=1]
 [ext_resource path="res://tests/test_game_rules.gd" type="Script" id=2]
 [ext_resource path="res://platform.gd" type="Script" id=3]
 [ext_resource path="res://Main.gd" type="Script" id=4]
 [ext_resource path="res://Asteroid.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Crystal.tscn" type="PackedScene" id=6]
-[ext_resource path="res://space-bg3.png" type="Texture" id=7]
-[ext_resource path="res://spaceship1.png" type="Texture" id=8]
+[ext_resource path="res://space-bg3.png" type="Texture2D" id=7]
+[ext_resource path="res://spaceship1.png" type="Texture2D" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 51.5611, 11.4985 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="FontFile" id=2]
 size = 64
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="FontFile" id=3]
 size = 128
 font_data = ExtResource( 1 )
 
@@ -33,7 +33,7 @@ BadDrop = ExtResource( 5 )
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 1360, 951 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 
 [node name="platform" type="Area2D" parent="."]
 position = Vector2( 489.326, 477.621 )
@@ -46,7 +46,7 @@ __meta__ = {
 position = Vector2( -14.6084, 56.8892 )
 shape = SubResource( 1 )
 
-[node name="platform" type="Sprite" parent="platform"]
+[node name="platform" type="Sprite2D" parent="platform"]
 position = Vector2( -29.1792, 47.5277 )
 scale = Vector2( 1.4089, 1.09491 )
 texture = ExtResource( 8 )
@@ -59,10 +59,10 @@ autostart = true
 [node name="Score" type="Label" parent="Menu"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -152.0
-margin_right = 152.0
-margin_bottom = 101.0
-custom_fonts/font = SubResource( 2 )
+offset_left = -152.0
+offset_right = 152.0
+offset_bottom = 101.0
+theme_override_fonts/font = SubResource( 2 )
 text = "Score: 0"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -71,9 +71,9 @@ __meta__ = {
 [node name="Life" type="Label" parent="Menu"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -266.0
-margin_bottom = 78.0
-custom_fonts/font = SubResource( 2 )
+offset_left = -266.0
+offset_bottom = 78.0
+theme_override_fonts/font = SubResource( 2 )
 text = "Life: 5"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -84,11 +84,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -346.5
-margin_top = -77.5
-margin_right = 346.5
-margin_bottom = 77.5
-custom_fonts/font = SubResource( 3 )
+offset_left = -346.5
+offset_top = -77.5
+offset_right = 346.5
+offset_bottom = 77.5
+theme_override_fonts/font = SubResource( 3 )
 text = "GAME OVER"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -111,8 +111,8 @@ layer = -128
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -1.05945
-margin_bottom = -1.05945
+offset_top = -1.05945
+offset_bottom = -1.05945
 color = Color( 0.105882, 0.101961, 0.0980392, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -123,10 +123,10 @@ anchor_left = 0.330844
 anchor_top = 0.632315
 anchor_right = 0.330844
 anchor_bottom = 0.632315
-margin_left = -339.0
-margin_top = -378.0
-margin_right = 1161.0
-margin_bottom = 822.0
+offset_left = -339.0
+offset_top = -378.0
+offset_right = 1161.0
+offset_bottom = 822.0
 texture = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": true

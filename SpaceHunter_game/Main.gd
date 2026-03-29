@@ -1,14 +1,13 @@
 extends Node2D
 
-export(PackedScene) var GoodDrop
-export(PackedScene) var BadDrop
-export(float) var bad_chance = 0.15
+@export var GoodDrop: PackedScene
+@export var BadDrop: PackedScene
+@export var bad_chance: float = 0.15
 var score = 0
 var life = 5
 var game_over = false
 var stars = []
-var drop_speed = 150.0
-# Messenger
+var drop_speed = 200.0
 var orbs_since_message = 0
 var asteroids_since_message = 0
 var is_typing = false
@@ -51,15 +50,13 @@ var idle_messages = [
 
 func orb_pulse():
 	$Camera2D.zoom = Vector2(1.05, 1.05)
-	yield(get_tree().create_timer(0.08), "timeout")
+	await get_tree().create_timer(0.08).timeout
 	$Camera2D.zoom = Vector2(1.0, 1.0)
-	
-	
+
 func start_shake(intensity, duration):
 	shake_intensity = intensity
 	shake_duration = duration
-	
-	
+
 func show_message(text):
 	if is_typing:
 		return
@@ -72,98 +69,72 @@ func show_message(text):
 	while i < full_text.length():
 		$UILayer/DialogueBox/MessageLabel.text += full_text[i]
 		i += 1
-		yield(get_tree().create_timer(0.05), "timeout")
-	yield(get_tree().create_timer(2.5), "timeout")
+		await get_tree().create_timer(0.05).timeout
+	await get_tree().create_timer(2.5).timeout
 	$UILayer/DialogueBox.visible = false
 	is_typing = false
 
 func _ready():
-	randomize()
 	$Menu/Score.text = "Score: 0"
 	$Menu/Life.text = "Attempts: 5"
 	$Menu/Message.hide()
 	for i in 80:
 		var star = ColorRect.new()
-		var sz = rand_range(1, 2.5)
-		star.rect_size = Vector2(sz, sz)
-		star.rect_position = Vector2(rand_range(0, 1024), rand_range(0, 600))
-		star.color = Color(1, 1, 1, rand_range(0.3, 1.0))
+		var sz = randf_range(1, 2.5)
+		star.size = Vector2(sz, sz)
+		star.position = Vector2(randf_range(0, 1152), randf_range(0, 648))
+		star.color = Color(1, 1, 1, randf_range(0.3, 1.0))
 		$Background/Stars.add_child(star)
-		stars.append({"node": star, "speed": rand_range(10, 40)})
-
+		stars.append({"node": star, "speed": randf_range(10, 40)})
 
 func _on_CrystalTimer_timeout():
 	if game_over:
 		return
-
 	var scene = GoodDrop
 	if randf() < bad_chance:
 		scene = BadDrop
-
-	var drop = scene.instance()
+	var drop = scene.instantiate()
 	add_child(drop)
 	drop.add_to_group("drops")
-	drop.linear_velocity = Vector2(0, drop_speed)
-	#drop.add_to_group("drops")
-	#drop.speed = drop_speed
-	#SAFE SPAWN (works with circle and rectangle shapes)
+	var screen_w = get_viewport_rect().size.x
+	drop.position.x = randf_range(80, screen_w - 80)
+	drop.position.y = -50
+	drop.speed = drop_speed
 
-	var cs = drop.get_node("CollisionShape2D")
-	var shape = cs.shape
-
-	var half_w = 16.0  
-
-	if shape is RectangleShape2D:
-		half_w = shape.extents.x * drop.scale.x
-	elif shape is CircleShape2D:
-		half_w = shape.radius * drop.scale.x
-
-	var view_rect = get_viewport().get_visible_rect()
-
-	var min_x = view_rect.position.x + half_w
-	var max_x = view_rect.position.x + view_rect.size.x - half_w
-
-	drop.position.x = rand_range(min_x, max_x)
-	drop.position.y = view_rect.position.y - 50
-	
-
-
-
-func _on_platform_body_entered(body):
+func _on_platform_area_entered(area: Area2D) -> void:
+	print("platform hit: ", area.name)
 	if game_over:
 		return
-	if body.has_method("get") and body.get("points") != null:
-		score += body.points
-		if body.points < 0:
+	if area.get("points") != null:
+		score += area.points
+		if area.points < 0:
 			start_shake(8.0, 0.4)
 		else:
 			orb_pulse()
 	else:
 		score += 1
-	body.queue_free()
+	area.queue_free()
 	$Menu/Score.text = "Score: " + str(score)
-	drop_speed = min(400.0, 150.0 + score * 1.5)
+	drop_speed = min(400.0, 200.0 + score * 1.5)
 	orbs_since_message += 1
 	if orbs_since_message >= 3:
 		orbs_since_message = 0
 		show_message(orb_messages[randi() % orb_messages.size()])
-	
-	
-func _on_Catcher_body_entered(body):
+
+func _on_catcher_area_entered(area: Area2D) -> void:
+	print("catcher hit: ", area.name)
 	if game_over:
 		return
-	if body.has_method("get") and body.get("points") != null:
-		if body.points > 0:
+	if area.get("points") != null:
+		if area.points > 0:
 			if not admin_mode:
 				life -= 1
 				$Menu/Life.text = "Attempts: " + str(life)
-
-	body.queue_free()
+	area.queue_free()
 	asteroids_since_message += 1
 	if asteroids_since_message >= 3:
 		asteroids_since_message = 0
 		show_message(asteroid_messages[randi() % asteroid_messages.size()])
-
 	if life < 1:
 		game_over = true
 		$CrystalTimer.stop()
@@ -171,17 +142,16 @@ func _on_Catcher_body_entered(body):
 		for child in drops:
 			child.queue_free()
 		_show_scoreboard()
-		
+
 func _on_MessengerTimer_timeout():
 	if game_over:
 		return
 	show_message(idle_messages[randi() % idle_messages.size()])
 
-
 func _process(delta):
 	if game_over and Input.is_action_just_pressed("restart"):
 		restart_game()
-	if Input.is_key_pressed(KEY_CONTROL) and Input.is_key_pressed(KEY_SHIFT) and Input.is_action_just_pressed("ui_accept"):
+	if Input.is_key_pressed(KEY_CTRL) and Input.is_key_pressed(KEY_SHIFT) and Input.is_action_just_pressed("ui_accept"):
 		admin_mode = !admin_mode
 		if admin_mode:
 			show_message("ADMIN MODE ON")
@@ -190,35 +160,28 @@ func _process(delta):
 	if admin_mode and Input.is_action_just_pressed("ui_up"):
 		score += 50
 		$Menu/Score.text = "Score: " + str(score)
-		
 	for s in stars:
-		s["node"].rect_position.y += s["speed"] * delta
-		if s["node"].rect_position.y > 600:
-			s["node"].rect_position.y = -4
-			s["node"].rect_position.x = rand_range(0, 1024)	
-			
+		s["node"].position.y += s["speed"] * delta
+		if s["node"].position.y > 648:
+			s["node"].position.y = -4
+			s["node"].position.x = randf_range(0, 1152)
 	if shake_duration > 0:
 		shake_duration -= delta
 		$Camera2D.offset = Vector2(
-			rand_range(-shake_intensity, shake_intensity),
-			rand_range(-shake_intensity, shake_intensity)
+			randf_range(-shake_intensity, shake_intensity),
+			randf_range(-shake_intensity, shake_intensity)
 		)
 	else:
 		shake_duration = 0.0
 		$Camera2D.offset = Vector2.ZERO
-	
-
-
 
 func restart_game():
 	get_tree().reload_current_scene()
-	
-func _show_scoreboard():
 
+func _show_scoreboard():
 	$Menu/Scoreboard/VBox/FinalScore.text = "Final Score: %d" % score
 	$Menu/Scoreboard/VBox/RestartHint.text = "Press ENTER to play again"
-	$Menu/Scoreboard.visible = true	
-
+	$Menu/Scoreboard.visible = true
 
 func _on_ExitButton_pressed():
-	get_tree().quit() # Replace with function body.
+	get_tree().quit()
