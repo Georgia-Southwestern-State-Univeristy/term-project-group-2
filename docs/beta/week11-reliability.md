@@ -144,3 +144,13 @@ transitions.
 **Planned fix:** Add sound effects for orb catch, asteroid hit,
 and game over. Improve scene transition signals and add audio bus
 configuration to the project.
+
+
+### Run notes:
+- Player gets feedback when energy is caught
+- Players gets notification for every 3 asteroid hits
+- Players gets notification for every 3 orbs caught
+
+### Evidence
+PR Link - 
+
