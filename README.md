@@ -4,12 +4,12 @@ This is a single player game where player plays game to catch energy and avoid a
 
 ## Godot Version
 
-This project uses Godot 3.2.2
+This project uses Godot 4.6.1
 
 ## Setup
 
-1. Install Godot Engine 3.2.2
-  https://godotengine.org/download/archive/3.2.2-stable/
+1. Install Godot Engine 4.6.1
+  https://github.com/godotengine/godot/releases/download/4.6.1-stable/Godot_v4.6.1-stable_linux.x86_64.zip
 2. Clone the repository
 3. Open project.godot in Godot
 
@@ -30,7 +30,7 @@ gdlint .
 
 ## How to Run and Verify the Energy Catch MVP Path
 Run the Project
-Install Godot 3.2.2
+Install Godot 4.6.1
 Clone the repository
 Open the project in Godot
 Run the main scene
@@ -46,12 +46,13 @@ The Energy object disappears
 The game remains in "playing" state
 This verifies the controller → service → state update → UI response path.
 
+
 ## Repository Structure
 ```
 .
 ├─ .github/
 │  └─ workflows/                         # GitHub Actions workflows
-│     └─  ci.yml                         # Automated CI pull request check to review the changes for an approval
+│     └─  ci.yml                         # Automated CI pull request check to review the changes and run test befor an approval
 ├─ SpaceHunter_game/                     # Program files for game built in Godot
 │  ├─ .import/                           # Images required for the game
 │  ├─ └─ ..                              # Game image files
@@ -66,10 +67,16 @@ This verifies the controller → service → state update → UI response path.
 │  │  ├─ openapi.yaml                    # Contract with endpoints tied to MVP 
 │  ├─ beta/                               
 │  │  ├─ beta-plan.md                    # Beta-plan for the week 9 - 12.
+│  │  ├─ bug-triage.md                   # Bug-triage for the week 9 - 12.
 │  │  ├─ bug-triage.md                   # Bug triage document
 │  │  ├─ observability.md                # Project code observability to identify issues and failures
-│  │  ├─ week10-pr-sprint.md             # Week 10 sprint goal and commitment to deliver
+│  │  ├─ week10-sprint.md                # Week 10 sprint goal and commitment to deliver
 │  │  ├─ week10-ux.md                    # Week 10 test and usability improvements
+│  │  ├─ week11-ci.md                    # Week 11 CI
+│  │  ├─ week11-e2e.md                   # Week 11 end to end testing
+│  │  ├─ week11-reliability.md           # Week 11 reliability and failure handling
+│  │  ├─ week11-sprint.md                # Week 11 sprint goal
+│  │  ├─ week11-status.md                # Week 11 sprint status
 │  │  ├─ week9-pr-index.md               # Week 9 pr-index to show shipped items
 │  │  ├─ week9-sprint.md                 # Week 9 sprint goal and commitment to deliver
 │  ├─ data/                               
