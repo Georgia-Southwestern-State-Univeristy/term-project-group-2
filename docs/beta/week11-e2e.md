@@ -1,24 +1,24 @@
 ## Define one primary workflow from start to finish required
 
-- Player collects a coin and score updates
+- Player collects a energy orb and score updates
   - Player starts game → moves → collects item → score updates
 
 
 ## Document:
 - Entry point and user role (Main.tscn)
 - Major system components involved
-    - Player controller script
-    - Input system (keyboard input)
-    - Collision detection
-    - Coin scene
-    - Score manager
-    - UI (score label)
+  - Camera2D
+  - Crystal timer
+  - Catcher
+  - Platform
+  - UI layer
+  - Background
+  - Messenger timer
 
 - Expected output or system state at completion
-    - Coin disappears
+    - Energy orb disappears
     - Score increases
     - UI updates
-
 
 ## Provide evidence:
 - PR links for fixes required to make it work
@@ -27,7 +27,7 @@
       
 - Short run notes
     - Game launches successfully
-    - Player collects coin
+    - Player collects energy orbs
     - Score increaments correctly
     - Tested on windows
 
