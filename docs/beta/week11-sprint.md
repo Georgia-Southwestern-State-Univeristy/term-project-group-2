@@ -1,5 +1,5 @@
 ## Sprint goal: one sentence tied to a complete workflow
-By sunday migrate entire project from version 3.2 to version 4.6 so that CI can run and pass tests.
+By sunday test end to end workflow to ensure player can move the ship, catch energy and there are no major issues.
 
 ## Committed items:
 **As a developer** I want to **migrate project to 4.6.1 version** so that **unit test can be run on CI**
