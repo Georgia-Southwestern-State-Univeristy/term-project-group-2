@@ -152,5 +152,5 @@ configuration to the project.
 - Players gets notification for every 3 orbs caught
 
 ### Evidence
-PR Link - 
+PR Link - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/247
 
