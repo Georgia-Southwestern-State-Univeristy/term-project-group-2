@@ -6,17 +6,20 @@ By sunday test end to end workflow to ensure player can move the ship, catch ene
   - Acceptance criteria:
     - Project should run on newer version as in current version
     - CI run should be passed on github
+  - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/issues/251
 
 **As a tester** I want to **do the unit testing** so that **I know the code passes the unit test**
   - Acceptance criteria:
     - Project should run with no errors
     - All unit test should be passes with no errors
+  - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/issues/255
 
 Risk 3 - Fix the screen frame so that game screen is aligned within required frame
   - Acceptance criteria:
     - Game should be loaded with in the frame with background
     - Objects should not spawn outside the frame
     - Messenger should appear on the bottom of the game
+  - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/issues/254
 
 Risk 2 - Adjust the objects so that they appear at correct location on the game screen
   - Acceptance criteria:
@@ -24,11 +27,13 @@ Risk 2 - Adjust the objects so that they appear at correct location on the game 
     - Score should be aligned on the top of the screen
     - Attempt should be aligned on the top of the screen
     - Objects should spawn with in the game frame
+  - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/issues/257
  
 Risk 1 - All drops immediately removed on game over
   - Acceptance criteria:
     - Energy catch function should not be called
     - When game over no object should spawn
+  - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/issues/255
 
       
 ## Evidence: link to the Project Board sprint view
