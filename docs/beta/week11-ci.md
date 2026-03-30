@@ -37,5 +37,9 @@
 CI broke when the GUT was not downloaded and was able to test. We had to correct the test cases and CI. yml file with the right version to have CI passed.
 
 
-## PR links and test notes
+## PR links
 - PR: - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/247
+
+## Test notes
+- Testing end to end workflow to ensure there are no bugs when player plays
+- Game UI has been corrected to display all objects within the frame
