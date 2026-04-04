@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1775255320
+::res://::1775269935
 ArchitectsDaughter-Regular.ttf::FontFile::2379511322149555578::1774758096::1774758112::1::::<><><>0<>0<>ee429e8c385071bafcbe61e7bb76b492<>res://.godot/imported/ArchitectsDaughter-Regular.ttf-26f5fab55185fc7b43984881cda2f592.fontdata::
 asteroid1.png::CompressedTexture2D::4237517088889849226::1774758096::1774758112::1::::<><><>0<>0<>13439be5d06eae28e235a1a7eb528c9c<>res://.godot/imported/asteroid1.png-b4da669b7c59edc2cf257736b8d198ed.ctex::
 Asteroid.gd::GDScript::4466249032037246341::1774758096::0::1::::<>Node2D<><>0<>0<><>::
@@ -18,6 +18,7 @@ energy_pixelart.png::CompressedTexture2D::1401899512743841432::1774758096::17747
 exit_button.png::CompressedTexture2D::3409265580552264952::1774758096::1774758112::1::::<><><>0<>0<>f3263f7ac9fe9e54ce4914b68ae93b98<>res://.godot/imported/exit_button.png-ea11afea608b89b5d872389e6f09d874.ctex::
 exit_button_hover.png::CompressedTexture2D::4602282019643193719::1774758096::1774758112::1::::<><><>0<>0<>fed0e7ab87a8c5990624cc067cf79b5f<>res://.godot/imported/exit_button_hover.png-36a68e17b756482a2f87ede2ebf4d231.ctex::
 export_presets.cfg::TextFile::-1::1774758096::0::1::::<><><>0<>0<><>::
+finalscore_bg copy.png::CompressedTexture2D::3995711822853041251::1775269708::1775269940::1::::<><><>0<>0<>8f8a01ca8c97cb194f440c01b2d4aa67<>res://.godot/imported/finalscore_bg copy.png-78641fd2158e435a77520ba515cf7d1e.ctex::
 GameOver.tscn::PackedScene::-1::1774758096::0::1::::<><><>0<>0<><>::
 HowToPlay.gd::GDScript::5904539592403706333::1775195956::0::1::::<>Node2D<><>0<>0<><>::
 HowToPlay.tscn::PackedScene::5290096784867827172::1775196063::0::1::::<><><>0<>0<><>::uid://cqeg50ro3brj6::::res://HowToPlay.gd<>uid://slgo5u71pnrk::::res://BitcountSingle-SemiBold.ttf<>uid://b3ibc7q82rvkl::::res://rules_bg.png
