@@ -5,7 +5,6 @@ extends Area2D
 func _process(delta):
 	var screen_w = get_viewport_rect().size.x
 	var half_w = $CollisionShape2D.shape.size.x / 2
-	print("screen_w: ", screen_w, " half_w: ", half_w, " pos: ", position.x)
 
 	var input = 0
 	if Input.is_action_pressed("ui_right"):

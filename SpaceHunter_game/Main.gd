@@ -102,15 +102,17 @@ func _on_CrystalTimer_timeout():
 	drop.speed = drop_speed
 
 func _on_platform_area_entered(area: Area2D) -> void:
-	print("platform hit: ", area.name)
+	#print("platform hit: ", area.name)
 	if game_over:
 		return
 	if area.get("points") != null:
 		score += area.points
 		if area.points < 0:
 			start_shake(8.0, 0.4)
+			print("Asteroid hit %d point, total points: %d" % [area.points, score])
 		else:
 			orb_pulse()
+			print("Energy orb +%d point, total points: %d" % [area.points, score])
 	else:
 		score += 1
 	area.queue_free()
@@ -122,7 +124,7 @@ func _on_platform_area_entered(area: Area2D) -> void:
 		show_message(orb_messages[randi() % orb_messages.size()])
 
 func _on_catcher_area_entered(area: Area2D) -> void:
-	print("catcher hit: ", area.name)
+	#print("catcher hit: ", area.name)
 	if game_over:
 		return
 	if area.get("points") != null:
@@ -130,6 +132,9 @@ func _on_catcher_area_entered(area: Area2D) -> void:
 			if not admin_mode:
 				life -= 1
 				$Menu/Life.text = "Attempts: " + str(life)
+				print("Orb missed! -1 attempt, attempts remaining: %d" % life)
+			else:
+				print("Asteroid missed, no penalty, attempts remaining: %d" % life)
 	area.queue_free()
 	asteroids_since_message += 1
 	if asteroids_since_message >= 3:
@@ -185,3 +190,4 @@ func _show_scoreboard():
 
 func _on_ExitButton_pressed():
 	get_tree().quit()
+	
