@@ -1,7 +1,7 @@
-ColorRect
-TextureButton
-Label
-Panel
 TextureRect
+ColorRect
+Label
+TextureButton
+Panel
 Control
 Area2D

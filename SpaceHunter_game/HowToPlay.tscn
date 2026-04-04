@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://chmteeb3nss81"]
+
+[ext_resource type="Script" uid="uid://cqeg50ro3brj6" path="res://HowToPlay.gd" id="1_r7xa0"]
+[ext_resource type="FontFile" uid="uid://slgo5u71pnrk" path="res://BitcountSingle-SemiBold.ttf" id="2_heos3"]
+[ext_resource type="Texture2D" uid="uid://b3ibc7q82rvkl" path="res://rules_bg.png" id="2_t2toj"]
+
+[node name="HowToPlay" type="Node2D" unique_id=908698347]
+script = ExtResource("1_r7xa0")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1092728418]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 1151.0
+offset_bottom = 649.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_t2toj")
+
+[node name="PressEnterLabel" type="Label" parent="." unique_id=1201674241]
+offset_left = 395.0
+offset_top = 555.0
+offset_right = 755.0
+offset_bottom = 592.0
+theme_override_fonts/font = ExtResource("2_heos3")
+theme_override_font_sizes/font_size = 30
+text = "press Enter to start"
