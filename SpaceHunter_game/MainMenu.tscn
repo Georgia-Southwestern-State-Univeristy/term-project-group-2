@@ -23,6 +23,7 @@ offset_right = 1170.7096
 offset_bottom = 664.0
 texture = ExtResource("1_i26rj")
 expand_mode = 1
+script = ExtResource("1_cqjrg")
 
 [node name="Panel" type="ColorRect" parent="." unique_id=1601464114]
 layout_mode = 0
