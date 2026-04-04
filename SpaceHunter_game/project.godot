@@ -13,7 +13,7 @@ config_version=5
 config/name="SpaceHunter"
 run/main_scene="uid://bjo6nha7yanr2"
 config/features=PackedStringArray("4.6")
-config/icon="res://icon.png"
+config/icon="uid://cn4mtx50fuygb"
 
 [display]
 
