@@ -7,8 +7,12 @@
 [ext_resource type="FontFile" uid="uid://slgo5u71pnrk" path="res://BitcountSingle-SemiBold.ttf" id="5"]
 [ext_resource type="Texture2D" uid="uid://csr7342yc0u1x" path="res://space-bg3.png" id="6"]
 [ext_resource type="PackedScene" uid="uid://dnc3eftal4gh1" path="res://Asteroid.tscn" id="7"]
+[ext_resource type="Texture2D" uid="uid://bw6s14f4m528f" path="res://finalscore_bg copy.png" id="7_wkp8b"]
 [ext_resource type="Texture2D" uid="uid://n2xr0pk7opsr" path="res://botUI.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://t8dcywn0y2jk" path="res://energy_pixelart.png" id="8_c6i3y"]
 [ext_resource type="Texture2D" uid="uid://boonhpnvw4i51" path="res://botUI_face.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://botqdusxlkf5i" path="res://exit_button.png" id="9_c2ibq"]
+[ext_resource type="Texture2D" uid="uid://b6tm6a2nopwg2" path="res://exit_button_hover.png" id="10_j4qnp"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(85, 26.49579)
@@ -92,23 +96,6 @@ cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id="4"]
-fallbacks = Array[Font]([ExtResource("5")])
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
 [sub_resource type="FontFile" id="5"]
 fallbacks = Array[Font]([ExtResource("5")])
 cache/0/variation_coordinates = {}
@@ -125,6 +112,126 @@ cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/19/0/ascent = 0.0
+cache/0/19/0/descent = 0.0
+cache/0/19/0/underline_position = 0.0
+cache/0/19/0/underline_thickness = 0.0
+cache/0/19/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/21/0/ascent = 0.0
+cache/0/21/0/descent = 0.0
+cache/0/21/0/underline_position = 0.0
+cache/0/21/0/underline_thickness = 0.0
+cache/0/21/0/scale = 1.0
+cache/0/22/0/ascent = 0.0
+cache/0/22/0/descent = 0.0
+cache/0/22/0/underline_position = 0.0
+cache/0/22/0/underline_thickness = 0.0
+cache/0/22/0/scale = 1.0
+cache/0/23/0/ascent = 0.0
+cache/0/23/0/descent = 0.0
+cache/0/23/0/underline_position = 0.0
+cache/0/23/0/underline_thickness = 0.0
+cache/0/23/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/26/0/ascent = 0.0
+cache/0/26/0/descent = 0.0
+cache/0/26/0/underline_position = 0.0
+cache/0/26/0/underline_thickness = 0.0
+cache/0/26/0/scale = 1.0
+cache/0/27/0/ascent = 0.0
+cache/0/27/0/descent = 0.0
+cache/0/27/0/underline_position = 0.0
+cache/0/27/0/underline_thickness = 0.0
+cache/0/27/0/scale = 1.0
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/29/0/ascent = 0.0
+cache/0/29/0/descent = 0.0
+cache/0/29/0/underline_position = 0.0
+cache/0/29/0/underline_thickness = 0.0
+cache/0/29/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/31/0/ascent = 0.0
+cache/0/31/0/descent = 0.0
+cache/0/31/0/underline_position = 0.0
+cache/0/31/0/underline_thickness = 0.0
+cache/0/31/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/33/0/ascent = 0.0
+cache/0/33/0/descent = 0.0
+cache/0/33/0/underline_position = 0.0
+cache/0/33/0/underline_thickness = 0.0
+cache/0/33/0/scale = 1.0
+cache/0/34/0/ascent = 0.0
+cache/0/34/0/descent = 0.0
+cache/0/34/0/underline_position = 0.0
+cache/0/34/0/underline_thickness = 0.0
+cache/0/34/0/scale = 1.0
+cache/0/35/0/ascent = 0.0
+cache/0/35/0/descent = 0.0
+cache/0/35/0/underline_position = 0.0
+cache/0/35/0/underline_thickness = 0.0
+cache/0/35/0/scale = 1.0
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+cache/0/37/0/ascent = 0.0
+cache/0/37/0/descent = 0.0
+cache/0/37/0/underline_position = 0.0
+cache/0/37/0/underline_thickness = 0.0
+cache/0/37/0/scale = 1.0
+cache/0/38/0/ascent = 0.0
+cache/0/38/0/descent = 0.0
+cache/0/38/0/underline_position = 0.0
+cache/0/38/0/underline_thickness = 0.0
+cache/0/38/0/scale = 1.0
+cache/0/39/0/ascent = 0.0
+cache/0/39/0/descent = 0.0
+cache/0/39/0/underline_position = 0.0
+cache/0/39/0/underline_thickness = 0.0
+cache/0/39/0/scale = 1.0
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
 
 [sub_resource type="FontFile" id="6"]
 fallbacks = Array[Font]([ExtResource("5")])
@@ -142,23 +249,91 @@ cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
-
-[sub_resource type="FontFile" id="7"]
-fallbacks = Array[Font]([ExtResource("5")])
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/19/0/ascent = 0.0
+cache/0/19/0/descent = 0.0
+cache/0/19/0/underline_position = 0.0
+cache/0/19/0/underline_thickness = 0.0
+cache/0/19/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/21/0/ascent = 0.0
+cache/0/21/0/descent = 0.0
+cache/0/21/0/underline_position = 0.0
+cache/0/21/0/underline_thickness = 0.0
+cache/0/21/0/scale = 1.0
+cache/0/22/0/ascent = 0.0
+cache/0/22/0/descent = 0.0
+cache/0/22/0/underline_position = 0.0
+cache/0/22/0/underline_thickness = 0.0
+cache/0/22/0/scale = 1.0
+cache/0/23/0/ascent = 0.0
+cache/0/23/0/descent = 0.0
+cache/0/23/0/underline_position = 0.0
+cache/0/23/0/underline_thickness = 0.0
+cache/0/23/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/26/0/ascent = 0.0
+cache/0/26/0/descent = 0.0
+cache/0/26/0/underline_position = 0.0
+cache/0/26/0/underline_thickness = 0.0
+cache/0/26/0/scale = 1.0
+cache/0/27/0/ascent = 0.0
+cache/0/27/0/descent = 0.0
+cache/0/27/0/underline_position = 0.0
+cache/0/27/0/underline_thickness = 0.0
+cache/0/27/0/scale = 1.0
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/29/0/ascent = 0.0
+cache/0/29/0/descent = 0.0
+cache/0/29/0/underline_position = 0.0
+cache/0/29/0/underline_thickness = 0.0
+cache/0/29/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/31/0/ascent = 0.0
+cache/0/31/0/descent = 0.0
+cache/0/31/0/underline_position = 0.0
+cache/0/31/0/underline_thickness = 0.0
+cache/0/31/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/33/0/ascent = 0.0
+cache/0/33/0/descent = 0.0
+cache/0/33/0/underline_position = 0.0
+cache/0/33/0/underline_thickness = 0.0
+cache/0/33/0/scale = 1.0
 
 [sub_resource type="RectangleShape2D" id="8"]
 size = Vector2(1036.32, 20)
@@ -282,11 +457,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BG" type="ColorRect" parent="Menu/Scoreboard" unique_id=1349040140]
+[node name="BG" type="TextureRect" parent="Menu/Scoreboard" unique_id=1734496287]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0.0313726, 0.0313726, 0.101961, 1)
+texture = ExtResource("7_wkp8b")
 
 [node name="VBox" type="Control" parent="Menu/Scoreboard" unique_id=16436922]
 anchors_preset = 0
@@ -297,45 +472,59 @@ offset_bottom = 602.119
 
 [node name="Title" type="Label" parent="Menu/Scoreboard/VBox" unique_id=329831824]
 custom_minimum_size = Vector2(0, 60)
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -231.339
-offset_top = -469.54
-offset_right = 200.661
-offset_bottom = -372.54
-theme_override_colors/font_color = Color(0.8, 0.92549, 0, 1)
-theme_override_fonts/font = SubResource("4")
-text = "GAME OVER"
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -238.119
+offset_right = 352.00003
+offset_bottom = -137.119
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5")
+theme_override_font_sizes/font_size = 40
+text = "The adventure is over, 
+Space Hunter!"
+horizontal_alignment = 1
 
 [node name="FinalScore" type="Label" parent="Menu/Scoreboard/VBox" unique_id=2140118825]
 layout_mode = 0
-offset_left = 332.624
-offset_top = 276.76
-offset_right = 518.624
-offset_bottom = 309.76
+offset_left = 405.99997
+offset_top = 269.88104
+offset_right = 670.0
+offset_bottom = 318.88104
 theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 40
 text = "Final Score"
 
 [node name="RestartHint" type="Label" parent="Menu/Scoreboard/VBox" unique_id=1318314805]
 layout_mode = 0
-offset_left = 254.522
-offset_top = 359.353
-offset_right = 737.522
-offset_bottom = 437.353
+offset_left = 367.99997
+offset_top = 405.88104
+offset_right = 784.0
+offset_bottom = 445.88104
 theme_override_fonts/font = SubResource("6")
+theme_override_font_sizes/font_size = 33
 text = "PRESS ENTER TO RESTRT"
 
-[node name="ExitButton" type="Button" parent="Menu/Scoreboard" unique_id=1818026287]
+[node name="EnergyPixelart" type="Sprite2D" parent="Menu/Scoreboard/VBox" unique_id=886019405]
+position = Vector2(576, 221.88103)
+scale = Vector2(0.5694445, 0.5694444)
+texture = ExtResource("8_c6i3y")
+
+[node name="ExitButton" type="TextureButton" parent="Menu/Scoreboard" unique_id=1439622551]
 layout_mode = 0
-offset_left = 479.251
-offset_top = 448.331
-offset_right = 563.251
-offset_bottom = 491.331
-theme_override_fonts/font = SubResource("7")
-text = "Exit"
+offset_left = 474.0
+offset_top = 512.0
+offset_right = 988.0
+offset_bottom = 650.0
+scale = Vector2(0.35999876, 0.35999876)
+texture_normal = ExtResource("9_c2ibq")
+texture_hover = ExtResource("10_j4qnp")
 
 [node name="Catcher" type="Area2D" parent="." unique_id=1215994210]
 position = Vector2(497.803, 598.212)
@@ -361,11 +550,11 @@ offset_bottom = 822.0
 texture = ExtResource("6")
 
 [node name="BackgroundSpace" type="ColorRect" parent="Background" unique_id=914599276]
-offset_left = 1.0
-offset_top = -4.0
-offset_right = 1156.0
+offset_left = -8.0
+offset_top = -16.0
+offset_right = 1168.1603
 offset_bottom = 651.0
-color = Color(0.0313726, 0.0313726, 0.101961, 1)
+color = Color(0.016427802, 0.016424743, 0.0649036, 1)
 
 [node name="Stars" type="Node2D" parent="Background" unique_id=1079514299]
 
