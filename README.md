@@ -67,7 +67,6 @@ This verifies the controller → service → state update → UI response path.
 │  │  ├─ openapi.yaml                    # Contract with endpoints tied to MVP 
 │  ├─ beta/                               
 │  │  ├─ beta-plan.md                    # Beta-plan for the week 9 - 12.
-│  │  ├─ bug-triage.md                   # Bug-triage for the week 9 - 12.
 │  │  ├─ bug-triage.md                   # Bug triage document
 │  │  ├─ observability.md                # Project code observability to identify issues and failures
 │  │  ├─ week10-sprint.md                # Week 10 sprint goal and commitment to deliver
@@ -77,10 +76,15 @@ This verifies the controller → service → state update → UI response path.
 │  │  ├─ week11-reliability.md           # Week 11 reliability and failure handling
 │  │  ├─ week11-sprint.md                # Week 11 sprint goal
 │  │  ├─ week11-status.md                # Week 11 sprint status
+│  │  ├─ week12-known-issues.md          # Week 12 known issues
+│  │  ├─ week12-quality.md               # Week 12 quality check
+│  │  ├─ week12-retro.md                 # Week 12 team retrospective
 │  │  ├─ week9-pr-index.md               # Week 9 pr-index to show shipped items
 │  │  ├─ week9-sprint.md                 # Week 9 sprint goal and commitment to deliver
 │  ├─ data/                               
 │  │  ├─ model.md                        # ERD with List entities + key fields + relationships and model diagram image link
+│  ├─ deployment/                               
+│  │  ├─ beta-deploy.md                   # Beta deployment document with instructions on how to deploy and run the beta version
 │  ├─ mvp/                               
 │  │  ├─ demo-readiness.md               # Demo readiness plan
 │  │  ├─ explicit-non-goals.md           # Explicit non goals defined in the document
@@ -90,6 +94,8 @@ This verifies the controller → service → state update → UI response path.
 │  │  ├─ mvp.md                          # MVP defined
 │  │  ├─ release-notes-midterm.md        # Midterm release notes for MVP of space hunter game
 │  │  ├─ scope-lock.md                   # MVP stories, scope lock, demo script outline and risk defined
+│  ├─ releases/                               
+│  │  ├─ beta-release.md                 # Beta release version documented with what's being released, date and known limitations
 │  ├─ security/                               
 │  │  ├─ auth.md                         # 
 │  │  ├─ week10-security-notes           # Week 10 security notes showing the validation and security
