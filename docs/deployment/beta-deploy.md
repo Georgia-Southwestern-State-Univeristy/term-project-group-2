@@ -3,9 +3,12 @@
 ## Overview
 SpaceHunter is a standalone Windows desktop game exported from Godot 4.6.1. (Previously Godot 3.2.2)
 No installation, no internet connection, no environment variables, 
-no database, and no dependencies are required.
+No database, and no dependencies are required.
+Atleast 150 MB of disk space required to save and 24 MB RAM required to run the game on local windows machine
 
 ---
+
+### There are 2 options to run the game. Option 2 is the preferred option as no software needs to be installed to run and test.
 
 ## Option 1: Run from source in Godot Editor (Main)
 
@@ -15,7 +18,7 @@ no database, and no dependencies are required.
 
 ### Steps
 1. Clone the repository:
-```bash
+``` bash
 git clone term-project-group-2
 ```
 2. Open Godot 4.6.1
@@ -25,17 +28,17 @@ git clone term-project-group-2
 6. Press **F5** to run the game
 
 
-## Option 2 — Run the exported .exe
+## Option 2 — Run the exported .exe and .pck
 
 ### Requirements
 - Windows 10 or Windows 11
 - No additional software needed
 
 ### Steps
-1. Download the latest release from the GitHub repository
-2. Extract the ZIP file to any folder
+1. Download the latest release from the GitHub repository from folder "SpaceHunter_Game" (SpaceHunter.exe and SpaceHunter.pck)
+2. Extract the ZIP file to any folder if downloaded as zip else ensure both .exe and .pck files are in same location
 3. Double click `SpaceHunter.exe` to launch
-4. The main menu appears immediately
+4. The main menu appears immediately with the instruction to play
 
 ### What to do first after launch
 1. Read the main menu: click **Play** to start or **Exit** to quit
@@ -58,14 +61,13 @@ All game state is held in memory and resets on every launch.
 
 ## Seed Data / Test Accounts
 None required. However an admin debug mode is available for reviewers
-who want to test scoring and attempts behavior:
+Who want to test scoring and attempts behavior:
 
-- Launch the game and start a session
+- Launch the game and start a session as per instruction provided above
 - Press **Ctrl + Shift + Enter** during gameplay
 - **Arrow Up** adds 50 points instantly
 - Attempts will not decrease in admin mode
-- Press **Ctrl + Shift + Enter** again to disable
-
+- Press **Ctrl + Shift + Enter** again to disable admin mode
 ---
 
 ## How to export a new version of .exe Build (For Team)
@@ -91,6 +93,9 @@ The following was verified by the team before submission:
 - [x] Scoreboard displays correct final score
 - [x] Restart and Exit buttons work from scoreboard
 - [x] Admin mode activates and deactivates correctly
+
+
+## Evidence of the game tested by team
 
 - Image of executable file downloaded
 
