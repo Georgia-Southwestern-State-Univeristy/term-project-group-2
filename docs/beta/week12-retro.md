@@ -1,88 +1,91 @@
 # Sprint Retrospective
 
-## What went well
+## What Went Well
 
-### Architecture decisions held up
-The decision to separate game logic into distinct functions 
-(`_on_platform_area_entered`, `_on_catcher_area_entered`, 
-`_on_MessengerTimer_timeout`) made it straightforward to add 
-guards and new behavior without touching unrelated systems. 
-The `game_over` flag as a single source of truth for state 
-control proved reliable across all functions.
+### Architecture enabled safe iteration and controlled change
+The system design demonstrated strong separation of concerns, allowing the team to evolve functionality without introducing regressions. Core gameplay logic was decomposed into focused, single-responsibility handlers (e.g., `_on_platform_area_entered`, `_on_catcher_area_entered`, `_on_MessengerTimer_timeout`).
 
-### Godot 4.6.1 migration was contained
-Breaking changes were isolated and fixed systematically:
-- `yield` → `await`
-- `rand_range` → `randf_range`
-- `RigidBody2D` → `Area2D` for drops
-- `body_entered` → `area_entered` signals
-- `shape.extents` → `shape.size`
+State control via a centralized `game_over` flag provided a clear execution boundary across systems, reducing ambiguity and preventing inconsistent state transitions. This made both debugging and feature extension predictable.
 
-No migration changes broke unrelated systems because the 
-codebase had clear separation between game logic and physics.
+### Migration was executed with containment and discipline
+The transition to Godot 4.6.1 was handled incrementally, with breaking API changes isolated and resolved systematically (`yield → await`, signal updates, node changes).
 
-### GUT tests added confidence
-Writing tests against game rules (`energy_catch`, `asteroid_hit`, 
-`check_game_over`) caught a logic error where asteroid hits were 
-incorrectly costing attempts instead of deducting score.
+Because gameplay logic was decoupled from engine-specific implementations, migration did not introduce cross-system regressions. This validates the architectural decision to isolate game rules from engine behavior.
 
-### CI pipeline functional
-`--path SpaceHunter_game` flag resolved the subfolder issue. 
-Import step runs before tests to avoid asset loading failures.
+### Automated testing improved correctness and confidence
+The introduction of GUT tests established a baseline for validating core gameplay rules. Tests covering key logic paths (`energy_catch`, `asteroid_hit`, `check_game_over`) successfully identified a scoring defect that would likely have persisted under manual testing.
 
----
+This demonstrates effective use of tests to enforce correctness of core mechanics rather than relying on visual verification.
 
-## What slowed the team down
+### CI/CD pipeline enforces quality gates
+The CI pipeline is not just functional—it enforces delivery discipline. Test failures block merges, and all changes flow through pull requests before integration into `main`.
 
-### Git workflow caused file corruption
-`MainMenu.tscn` was corrupted by an unresolved merge conflict 
-from GitHub Desktop auto-merging a binary-format scene file. 
-This cost significant time to diagnose and required rebuilding 
-the scene from scratch. Root cause: `.tscn` files are not 
-human-mergeable but were treated as text files by Git.
+Key pipeline improvements (e.g., correct project path, asset import step before test execution) ensure deterministic execution. This establishes CI as a gatekeeper for code quality, not just a diagnostic tool.
 
-**Engineering fix applied:** Team switched to command line Git. 
+## What Slowed Team Progress
 
-### Physics migration was underestimated
-Switching from Godot 3.2.2 to 4.6.1 changed how `RigidBody2D` 
-handles gravity and linear aspects. The assumption that 
-`linear_velocity` would behave identically was wrong. This 
-required changing the drop architecture from physics-based 
-to manual `position.y += speed * delta` movement. The fix 
-was straightforward but the diagnosis took longer than it 
-should have because the root cause (gravity_scale default 
-change) was not immediately obvious.
+### Binary asset handling was not enforced at the process level
+A `.tscn` scene file corruption exposed a gap in repository configuration and team workflow. Treating scene files as mergeable text led to unresolved conflicts and full asset reconstruction.
 
-### Spawn boundary calculation was fragile
-The original spawn code relied on `shape.extents.x` which 
-was removed in Godot 4. The fallback `half_w = 16.0` was 
-silently wrong drops spawned off screen with no error. 
-A hardcoded margin of `80px` was used as the fix.
+This was a preventable process failure rather than a technical limitation.
 
-### Scope additions mid-beta introduced risk
-New features (Messenger bot, camera shake, admin mode, 
-HowToPlay screen) were added during the beta sprint. Each 
-was implemented cleanly but collectively they increased 
-the surface area for bugs.
+Action taken: move to CLI-based Git workflow and recognition of the need for enforced `.gitattributes`.
 
----
+### Engine behavior changes were not validated early
+The migration underestimated behavioral differences in physics (e.g., gravity defaults, `linear_velocity`). Assumptions of parity between versions delayed root cause identification.
 
-## Top 3 lessons learned
-- Core gameplay is stable and exportable even though it was a difficult transition.
-CI is running. Documentation is complete. We learend that the previous
-version of Godot did not support the GUT testing.
-This is why we had to transition, since testing is important.
-- Setting up the repository correctly to sync from desktop to repository without any problems.
-- Keeping the scope intact and working towards it.
+The eventual shift to deterministic movement (`position.y += speed * delta`) improved system predictability and testability, but earlier validation of engine-level changes would have reduced iteration time.
 
+### Lack of defensive checks in rendering logic
+Spawn boundary logic relied on deprecated properties and introduced silent failure (`half_w = 16.0`). The system lacked assertions or validation to catch out-of-bounds spawning early.
 
+This highlights the need for stronger guardrails around visual and positional correctness.
 
----
+### Scope expansion reduced delivery focus during stabilization
+Introducing new features during the beta phase increased system complexity and testing surface area. While implementations were clean, they diluted focus from stabilization and increased integration risk late in the cycle.
 
-## Top 5 priorities for Weeks 13–15
+This reflects a need for stricter scope control during critical delivery phases.
 
-- Add `*.tscn merge=binary` to `.gitattributes`
-- Fix UI of the game
-- Fix the problem when the window is minimized/ maximized 
-- Export and test the .exe build after every significant change
-- Remove all debug print statements before any export
+## Top 5 Key Lessons Learned
+
+### 1. Decoupled architecture reduces upgrade and regression risk
+Separating game rules from engine behavior enabled a controlled and low-risk migration.
+
+### 2. CI-enforced workflows improve delivery reliability
+Using PRs with mandatory CI pass before merge ensures that only validated changes reach `main`, significantly reducing integration risk.
+
+### 3. Testing should focus on invariants and rules, not just flows
+Validating core mechanics (scoring, state transitions) provides high value and catches non-obvious defects.
+
+### 4. Repository configuration is part of engineering quality
+Binary asset handling must be explicitly enforced to prevent avoidable rework.
+
+### 5. Scope discipline is critical during late-stage development
+Feature additions during stabilization phases introduce disproportionate risk relative to their value.
+
+## Top 5 Priorities for Weeks 13–15
+
+### 1. Enforce repository and asset handling rules
+
+- Add `.gitattributes` (`*.tscn merge=binary`)
+- Standardize merge and conflict resolution practices
+
+### 2. Expand test coverage and depth
+
+- Add edge case tests (simultaneous collisions, rapid state changes)
+- Ensure critical gameplay paths are fully covered
+
+### 3. Strengthen CI pipeline as a release gate
+
+- Add automated `.exe` build step
+- Validate build artifacts within CI (not manually)
+
+### 4. Improve UI and runtime robustness
+
+- Resolve layout inconsistencies
+- Ensure correct behavior across window states (minimize/maximize)
+
+### 5. Formalize release discipline
+
+- Introduce a pre-release checklist (tests passing, clean logs, build success)
+- Remove debug statements systematically before release
