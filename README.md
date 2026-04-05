@@ -35,7 +35,7 @@ Clone the repository
 Open the project in Godot
 Run the main scene
 
-Verify the MVP Behavior
+## Verify the MVP Behavior
 To test the Energy Catch behavior:
 Move the platform using left/right keys
 Catch a falling Energy object
@@ -54,8 +54,12 @@ This verifies the controller → service → state update → UI response path.
 │  └─ workflows/                         # GitHub Actions workflows
 │     └─  ci.yml                         # Automated CI pull request check to review the changes and run test befor an approval
 ├─ SpaceHunter_game/                     # Program files for game built in Godot
+│  ├─ .godot/                            # Main code required for the game
 │  ├─ .import/                           # Images required for the game
 │  ├─ └─ ..                              # Game image files
+│  ├─ addons/                            # Addons folder for the game
+│  ├─ scripts/                           # Game rules folder for the game
+│  ├─ tests/                             # Tests folder for the game
 │  ├─ ../                                # Game program files
 ├─ assignment/                           
 │  └─ GROUP PROJECT..                    # Assignment files submitted for the week in .docx format                                   
@@ -98,7 +102,7 @@ This verifies the controller → service → state update → UI response path.
 │  │  ├─ beta-release.md                 # Beta release version documented with what's being released, date and known limitations
 │  ├─ security/                               
 │  │  ├─ auth.md                         # 
-│  │  ├─ week10-security-notes           # Week 10 security notes showing the validation and security
+│  │  ├─ week10-security-notes.md        # Week 10 security notes showing the validation and security
 │  ├─ team/
 │  │  ├─ MARIOP.md                       # Mario's role, availability and one engineering priciple he wnats to follow
 │  │  ├─ OLGARAU.md                      # Olga's role, availability and one engineering priciple he wnats to follow
