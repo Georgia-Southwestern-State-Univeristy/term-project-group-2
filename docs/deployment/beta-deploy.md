@@ -25,7 +25,7 @@ git clone term-project-group-2
 6. Press **F5** to run the game
 
 
-## Option 2 — Run the exported .exe (Recommended for reviewers STILL IN PROGRESS)
+## Option 2 — Run the exported .exe
 
 ### Requirements
 - Windows 10 or Windows 11
@@ -47,7 +47,6 @@ git clone term-project-group-2
 7. Game ends when all attempts are used, scoreboard shows final score
 8. Press **Enter** to restart or click **Exit** on the scoreboard
 
-**Note:** This option is still in progress and will be released SOON.
 
 ---
 ## Environment Variables
