@@ -1,6 +1,6 @@
 # Week 12 — Known Issues + Triage List
 
-## Issue 1: Scoreboard UI needs final adjustment
+## Issue 1: Scoreboard UI needs final adjustment - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/issues/286
 **Priority: High**
 
 **Description:** The game over scoreboard layout was built for the 
@@ -18,7 +18,7 @@ buttons are clearly visible and clickable.
 
 ---
 
-## Issue 2: Scene file corruption risk from Git conflicts
+## Issue 2: Scene file corruption risk from Git conflicts - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/issues/284
 **Priority: High**
 
 **Description:** During development, `MainMenu.tscn` became corrupted 
@@ -36,7 +36,7 @@ a text editor before opening in Godot.
 
 ---
 
-## Issue 3: Planned scope additions not yet confirmed safe
+## Issue 3: Planned scope additions not yet confirmed safe - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/issues/290
 **Priority: Medium**
 
 **Description:** The game lead has requested additional features 
@@ -56,7 +56,7 @@ to the team. Each feature to be evaluated against two criteria:
 
 ---
 
-## Issue 4: No audio output in any part of the game
+## Issue 4: No audio output in any part of the game - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/issues/291
 **Priority: Medium-Low**
 
 **Description:** The game currently has no sound effects.
@@ -69,7 +69,7 @@ Source royalty-free sound effects. Howver it is not crucial for the project.
 
 ---
 
-## Issue 5: Game performance not stress tested
+## Issue 5: Game performance not stress tested - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/issues/292
 **Priority: Low**
 
 **Description:** No major performance issues have been detected 
