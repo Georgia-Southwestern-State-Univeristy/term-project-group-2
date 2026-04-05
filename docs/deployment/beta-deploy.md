@@ -92,6 +92,20 @@ The following was verified by the team before submission:
 - [x] Restart and Exit buttons work from scoreboard
 - [x] Admin mode activates and deactivates correctly
 
+- Image of executable file downloaded
+
+<img width="652" height="157" alt="image" src="https://github.com/user-attachments/assets/6f3650bb-23ba-46d4-a4ad-8455383b0c3e" />
+
+
+- Image of game instructions
+
+<img width="566" height="326" alt="image" src="https://github.com/user-attachments/assets/3b27c3f2-dd28-4dea-beb3-4a0ed2abeeca" />
+
+
+- Image of game score increased by entering admin mode
+
+<img width="574" height="341" alt="image" src="https://github.com/user-attachments/assets/e3d60d60-0ec6-4440-a35b-b07677ace89a" />
+
 ---
 
 ## Known Limitations
