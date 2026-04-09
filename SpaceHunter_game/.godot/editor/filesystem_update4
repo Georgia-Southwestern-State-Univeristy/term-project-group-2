@@ -1,3 +1,5 @@
 res://default_env.tres
-res://Main.tscn
 res://MainMenu.tscn
+res://addons/gut/gui/editor_globals.gd
+res://addons/gut/gui/EditorRadioButton.tres
+res://tests/test_main.gd
