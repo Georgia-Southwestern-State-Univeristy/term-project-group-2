@@ -536,10 +536,11 @@ shape = SubResource("8")
 layer = -128
 
 [node name="BackgroundSpace" type="ColorRect" parent="Background" unique_id=914599276]
-offset_left = -8.0
-offset_top = -16.0
-offset_right = 1168.1603
-offset_bottom = 651.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.016427802, 0.016424743, 0.0649036, 1)
 
 [node name="Stars" type="Node2D" parent="Background" unique_id=1079514299]
