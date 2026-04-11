@@ -1,117 +1,216 @@
-# Project Name - SpaceHunter
+# SpaceHunter
 
-This is a single player game where player plays game to catch energy and avoid astroids
+SpaceHunter is a single-player arcade-style 2D game built in Godot where the player collects energy orbs while avoiding asteroids. The project is currently in **Beta**, with core gameplay complete and additional improvements focused on reliability, observability, and usability.
 
-## Godot Version
+---
 
-This project uses Godot 4.6.1
+## Project Status
 
-## Setup
+**Current Stage:** Beta  
+**Engine:** Godot 4.6.1  
+**Platform:** Desktop (Linux/Windows via Godot runtime)   
+**Install Godot Engine 4.6.1:**   https://github.com/godotengine/godot/releases/download/4.6.1-stable/Godot_v4.6.1-stable_linux.x86_64.zip
 
-1. Install Godot Engine 4.6.1
-  https://github.com/godotengine/godot/releases/download/4.6.1-stable/Godot_v4.6.1-stable_linux.x86_64.zip
-2. Clone the repository
-3. Open project.godot in Godot
+This repository is structured to allow another developer to:
+- Run the game locally
+- Verify core gameplay behavior
+- Understand system structure and design decisions
+- Review quality, testing, and release artifacts
 
-## Running the Project
+---
 
-Press F5 to run the main scene.
+## Quick Start (Run the Game)
 
-## Project Structure
+### 1. Install Godot
+Download Godot 4.6.1:  
+https://github.com/godotengine/godot/releases/tag/4.6.1-stable
 
-- scenes/ - Game scenes
-- scripts/ - GDScript files
-- assets/ - background and sprites
+### 2. Clone the Repository
+```bash
+git clone <https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2>
+cd <SpaceHunter_game>
+```
 
-## Formatting
-Run:
-gdformat .
-gdlint .
+### 3. Open Project
+- Launch Godot
+- Import project.godot from SpaceHunter_game/
 
-## How to Run and Verify the Energy Catch MVP Path
-Run the Project
-Install Godot 4.6.1
-Clone the repository
-Open the project in Godot
-Run the main scene
+### 4. Run
+- Press F5 to start the game
 
-## Verify the MVP Behavior
-To test the Energy Catch behavior:
-Move the platform using left/right keys
-Catch a falling Energy object
+### Expected Gameplay (MVP Verification)
 
-Observe that:
-The score increases by 1
-The Energy object disappears
-The game remains in "playing" state
-This verifies the controller → service → state update → UI response path.
+After running the game:
+
+#### Controls
+Move: Left / Right Arrow Keys
+Restart: Enter
+
+#### Core Loop
+1. Catch falling energy orbs
+2. Avoid asteroids
+3. Maintain lives and increase score
+
+### Verify Correct Behavior
+- Catching an orb:
+  - Score increases
+  - Orb disappears
+- Missing orb:
+  - Attempt decreases
+- Hitting asteroid:
+  - Score decreases
+  - Negative feedback (camera shake / message)
+- Game over:
+  - Scoreboard appears
+  - Restart option works
+
+This confirms the full gameplay loop:
+**Input → Game Logic → State Update → UI Feedback**
+
+
+#### Key Features (Beta)
+- Core gameplay loop implemented
+- Dynamic difficulty scaling (drop speed increases with score)
+- Player feedback system:
+  - Dialogue messages
+  - Camera shake and visual effects
+- Admin/debug mode (Ctrl + Shift + Enter)
+- Observability improvements:
+  - Structured logging system
+  - Startup validation checks
+  - Debug diagnostics overlay
+
+### Quality & Verification
+#### Automated Testing
+
+Located in:
+```
+/tests/
+```
+
+Includes:
+- Happy path tests
+- Failure case (missing resource)
+- Boundary test
+
+#### CI Pipeline
+Github Action workflow:
+```
+.github/workflows/ci.yml
+```
+- Runs checks on pull request
+- Enforce basic validation before merge
+
+#### Code Formatting
+```
+gdformat.
+gdlint.
+```
+
+### Release & Documentation
+#### Beta Release
+
+See:
+```
+docs/releases/beta-release.md
+```
+Includes:
+- Features delivered
+- Known limitations
+- Release scope
+
+### Observability & Debugging
+```
+docs/final/week13-observability.md
+```
+
+Covers:
+- Logging system
+- Error handling
+- Startup validation
+- Debug tools
+
+### Architecture
+```
+dosc/adr/ADR-001.md
+```
+Includes system design and diagrams.
 
 
 ## Repository Structure
 ```
-.
 ├─ .github/
-│  └─ workflows/                         # GitHub Actions workflows
-│     └─  ci.yml                         # Automated CI pull request check to review the changes and run test befor an approval
-├─ SpaceHunter_game/                     # Program files for game built in Godot
-│  ├─ .godot/                            # Main code required for the game
-│  ├─ .import/                           # Images required for the game
-│  ├─ └─ ..                              # Game image files
-│  ├─ addons/                            # Addons folder for the game
-│  ├─ scripts/                           # Game rules folder for the game
-│  ├─ tests/                             # Tests folder for the game
-│  ├─ ../                                # Game program files
-├─ assignment/                           
-│  └─ GROUP PROJECT..                    # Assignment files submitted for the week in .docx format                                   
-├─ docs/                                 # Project documents in respective folders
-│  ├─ adr/                               
-│  │  ├─ ADR-001.md                      # Architecture diagram of the game
-│  │  └─ ADR-001.md.jpeg                 # Architecture diagram image of the game
-│  ├─ api/                               
-│  │  ├─ openapi.yaml                    # Contract with endpoints tied to MVP 
-│  ├─ beta/                               
-│  │  ├─ beta-plan.md                    # Beta-plan for the week 9 - 12.
-│  │  ├─ bug-triage.md                   # Bug triage document
-│  │  ├─ observability.md                # Project code observability to identify issues and failures
-│  │  ├─ week10-sprint.md                # Week 10 sprint goal and commitment to deliver
-│  │  ├─ week10-ux.md                    # Week 10 test and usability improvements
-│  │  ├─ week11-ci.md                    # Week 11 CI
-│  │  ├─ week11-e2e.md                   # Week 11 end to end testing
-│  │  ├─ week11-reliability.md           # Week 11 reliability and failure handling
-│  │  ├─ week11-sprint.md                # Week 11 sprint goal
-│  │  ├─ week11-status.md                # Week 11 sprint status
-│  │  ├─ week12-known-issues.md          # Week 12 known issues
-│  │  ├─ week12-quality.md               # Week 12 quality check
-│  │  ├─ week12-retro.md                 # Week 12 team retrospective
-│  │  ├─ week9-pr-index.md               # Week 9 pr-index to show shipped items
-│  │  ├─ week9-sprint.md                 # Week 9 sprint goal and commitment to deliver
-│  ├─ data/                               
-│  │  ├─ model.md                        # ERD with List entities + key fields + relationships and model diagram image link
-│  ├─ deployment/                               
-│  │  ├─ beta-deploy.md                   # Beta deployment document with instructions on how to deploy and run the beta version
-│  ├─ mvp/                               
-│  │  ├─ demo-readiness.md               # Demo readiness plan
-│  │  ├─ explicit-non-goals.md           # Explicit non goals defined in the document
-│  │  ├─ midterm-demo.md                 # Mide-term demo presentaion link and video link with team, date.
-│  │  ├─ midterm-snapshop.md             # Midterm snapshot showing what we are delivering during midterm.
-│  │  ├─ mvp-checklist.md                # MVP checklist showing done and pending stories.
-│  │  ├─ mvp.md                          # MVP defined
-│  │  ├─ release-notes-midterm.md        # Midterm release notes for MVP of space hunter game
-│  │  ├─ scope-lock.md                   # MVP stories, scope lock, demo script outline and risk defined
-│  ├─ releases/                               
-│  │  ├─ beta-release.md                 # Beta release version documented with what's being released, date and known limitations
-│  ├─ security/                               
-│  │  ├─ auth.md                         # 
-│  │  ├─ week10-security-notes.md        # Week 10 security notes showing the validation and security
-│  ├─ team/
-│  │  ├─ MARIOP.md                       # Mario's role, availability and one engineering priciple he wnats to follow
-│  │  ├─ OLGARAU.md                      # Olga's role, availability and one engineering priciple he wnats to follow
-│  │  ├─ RAJESHAGGARWAL.md               # Rajesh's role, availability and one engineering priciple he wnats to follow
-│  │  ├─ definition-of-done.md           # Definition of done about the project                    
-├─ tests/                                
-│  ├─ test_code.gd                       # Test code file create for dummy testing
-│  ├─ test_game_rules.gd                 # Test code file showing - 2 “happy path” tests, 1 “failure path” test (missing resource), 1 boundary test (service or data layer)
-├─ CONTRIBUTING.MD                       # Contributing guidelines and conventions
-├─ PULL_REQUEST_TEMPLATE.MD              # Pull request checklist
-└─ READMD.MD                             # This document
+│ └─ workflows/
+│ └─ ci.yml                           # CI pipeline: runs automated checks/tests on pull requests before merge
+├─ SpaceHunter_game/                  # Main Godot game project
+│ ├─ .godot/                          # Godot project configuration and metadata
+│ ├─ .import/                         # Imported asset data generated by Godot
+│ ├─ addons/                          # External plugins or Godot add-ons
+│ ├─ scripts/                         # Core game logic (player, drops, game manager)
+│ ├─ scenes/                          # Game scenes (main scene, UI, objects)
+│ ├─ assets/                          # Sprites, backgrounds, and visual resources
+│ └─ tests/                           # In-engine test scripts (if applicable)
+├─ assignment/
+│ └─ GROUP PROJECT..                  # Course submission artifacts (.docx files)
+├─ docs/                              # Project documentation and deliverables
+│ ├─ adr/
+│ │ ├─ ADR-001.md                     # Architecture Decision Record (system design)
+│ │ └─ ADR-001.md.jpeg                # Architecture diagram image
+│ ├─ api/
+│ │ └─ openapi.yaml                   # API contract (if applicable to MVP scope)
+│ ├─ beta/
+│ │ ├─ beta-plan.md                   # Beta planning (weeks 9–12)
+│ │ ├─ bug-triage.md                  # Bug tracking and prioritization
+│ │ ├─ observability.md               # Observability and debugging improvements
+│ │ ├─ week10-ux.md                   # UX testing and improvements
+│ │ ├─ week11-ci.md                   # CI setup and validation
+│ │ ├─ week11-e2e.md                  # End-to-end testing
+│ │ ├─ week11-reliability.md          # Reliability and failure handling
+│ │ ├─ week12-known-issues.md         # Known issues in beta
+│ │ ├─ week12-quality.md              # Quality assurance summary
+│ │ └─ week12-retro.md                # Team retrospective
+│ ├─ data/
+│ │ └─ model.md                       # Data model / ERD and relationships
+│ ├─ deployment/
+│ │ └─ beta-deploy.md                 # Instructions to run/deploy the beta version
+│ ├─ mvp/
+│ │ ├─ mvp.md                         # MVP definition
+│ │ ├─ mvp-checklist.md               # Completed vs pending features
+│ │ ├─ scope-lock.md                  # Locked scope and risks
+│ │ ├─ demo-readiness.md              # Demo preparation
+│ │ └─ release-notes-midterm.md       # Midterm release notes
+│ ├─ releases/
+│ │ └─ beta-release.md                # Beta release notes (features, limitations, scope)
+│ ├─ security/
+│ │ └─ week10-security-notes.md       # Security considerations and validation
+│ ├─ team/
+│ │ ├─ definition-of-done.md          # Team definition of done
+│ │ ├─ MARIOP.md                      # Team member roles and contributions
+│ │ ├─ OLGARAU.md
+│ │ └─ RAJESHAGGARWAL.md
+├─ tests/
+│ ├─ test_code.gd                     # Basic test scaffolding
+│ └─ test_game_rules.gd               # Core tests (happy path, failure case, boundary test)
+├─ CONTRIBUTING.md                    # Contribution guidelines
+├─ PULL_REQUEST_TEMPLATE.md           # PR checklist and expectations
+└─ README.md                          # Project overview and setup instructions
+
 ```
+
+### Known Issues (Beta)
+See:
+```
+docs/beta/week12-known-issues.md
+```
+
+### Contributing
+Please folow:   
+- CONTRIBUTING.md
+- PULL_REQUEST_TEMPLATE.md
+
+### Team
+See:
+```
+docs/team
+```
+Includes roles, responsibility and engineering principles.
