@@ -2,7 +2,7 @@
 
 ## 1. System Overview
 
-This project is a 2D arcade-style game built using Godot 4.6.2. The player controls a spaceship that moves horizontally to collect falling energy objects while avoiding asteroids.
+This project is a 2D arcade-style game built using Godot 4.6.1. The player controls a spaceship that moves horizontally to collect falling energy objects while avoiding asteroids.
 
 Core gameplay mechanics:
 - The spaceship can move left and right
@@ -29,7 +29,7 @@ The system uses Godot’s scene-based architecture, with separate scenes/scripts
 ## 2. Stack and Tool Choices
 
 ### Game Engine
-- Godot 4.6.2
+- Godot 4.6.1
   - Used for its built-in 2D engine, physics system, and scene management
   - Enables rapid development using a node-based structure
 
@@ -49,7 +49,7 @@ The system uses Godot’s scene-based architecture, with separate scenes/scripts
   - Used for collaboration and version tracking
 
 ### CI (Continuous Integration)
-- GitHub Actions (if configured)
+- GitHub Actions 
   - Runs automated tests to ensure code stability
 
 ---
@@ -57,7 +57,7 @@ The system uses Godot’s scene-based architecture, with separate scenes/scripts
 ## 3. Setup / Run Summary
 
 ### Prerequisites
-- Install Godot 4.6.2
+- Install Godot 4.6.1
 
 ### Setup Instructions
 1. Clone the repository: https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2
@@ -75,7 +75,6 @@ The system uses Godot’s scene-based architecture, with separate scenes/scripts
 2. Open the GUT panel in Godot
 3. Run all tests or selected test scripts
 
-Optional (CLI):godot --headless -s addons/gut/gut_cmdln.gd
 ---
 
 ## 4. Known Weaknesses / Technical Debt
@@ -99,42 +98,6 @@ Optional (CLI):godot --headless -s addons/gut/gut_cmdln.gd
 ### 5. Gameplay Balancing
 - Spawn rates and difficulty scaling are not fully tuned
 - Game progression may feel inconsistent
-
----
-
-## 5. Recommended Next Steps
-
-### 1. Refactor `main.gd`
-- Break logic into smaller components:
-  - Spawner system (energy/asteroids)
-  - Score manager
-  - Attempt/life manager
-- Improves maintainability and readability
-
-### 2. Expand Test Coverage
-- Add tests for:
-  - Collision edge cases
-  - Spawn logic
-  - Game-over conditions
-- Strengthen regression protection
-
-### 3. Improve Observability
-- Expand logging system (e.g., structured debug messages)
-- Add in-game debug overlay (score, attempts, object counts)
-
-### 4. Enhance Gameplay Systems
-- Add difficulty scaling (increase speed/spawn rate over time)
-- Improve collision feedback (animations, sound effects)
-
-### 5. Improve Error Handling
-- Add validation for:
-  - Scene loading
-  - Resource availability
-- Prevent runtime crashes
-
-### 6. UI Improvements
-- Improve visibility of score and attempts
-- Add start/restart screens
 
 ---
 
