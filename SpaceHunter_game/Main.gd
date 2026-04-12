@@ -187,6 +187,9 @@ func restart_game():
 	get_tree().reload_current_scene()
 
 func _show_scoreboard():
+	if not is_instance_valid($Menu/Scoreboard):
+		push_error("Scoreboard node not found")
+		return
 	$Menu/Scoreboard/VBox/FinalScore.text = "Final Score: %d" % score
 	$Menu/Scoreboard/VBox/RestartHint.text = "Press ENTER to play again"
 	$Menu/Scoreboard.visible = true
