@@ -1,7 +1,7 @@
 # Week 13 – Observability + Support Visibility
 
 ## Overview
-This document outlines improvements made to enhance observability and support visibility in our Godot 4.6.2 game project. These changes make internal game state, errors, and system behavior more visible to developers and testers, making it easier to debug gameplay issues, monitor runtime behavior, and support future development.
+This document outlines improvements made to enhance observability and support visibility in our Godot 4.6.1 game project. These changes make internal game state, errors, and system behavior more visible to developers and testers, making it easier to debug gameplay issues, monitor runtime behavior, and support future development.
 
 ---
 
