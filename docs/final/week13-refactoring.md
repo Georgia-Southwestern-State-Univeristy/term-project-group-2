@@ -83,5 +83,5 @@ Coverage includes:
 - Life reduction on missed objects
 
 ### PR References
-PR Link # - Minor cleanup in ```Main.gd``` for readability
+PR Link # https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/330 - Minor cleanup in ```Main.gd``` for readability
 
