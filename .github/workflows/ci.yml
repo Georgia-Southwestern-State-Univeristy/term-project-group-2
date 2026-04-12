@@ -1,4 +1,4 @@
-name: GUT Tests
+name: GUT Tests + Build
 
 on:
   push:
@@ -10,7 +10,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     name: Run GUT Tests
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -34,3 +33,44 @@ jobs:
             -gsuffix=.gd \
             -gexit_on_success \
             -glog=1
+
+  build-windows:
+    runs-on: ubuntu-latest
+    name: Build Windows EXE
+    needs: test
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Download Godot 4.6.1
+        run: |
+          wget -q https://github.com/godotengine/godot/releases/download/4.6.1-stable/Godot_v4.6.1-stable_linux.x86_64.zip
+          unzip Godot_v4.6.1-stable_linux.x86_64.zip
+          chmod +x Godot_v4.6.1-stable_linux.x86_64
+          mv Godot_v4.6.1-stable_linux.x86_64 godot
+
+      - name: Install export templates
+        run: |
+          wget -q https://github.com/godotengine/godot/releases/download/4.6.1-stable/Godot_v4.6.1-stable_export_templates.tpz
+          mkdir -p ~/.local/share/godot/export_templates/4.6.1.stable
+          cd ~/.local/share/godot/export_templates/4.6.1.stable
+          unzip ~/work/${{ github.event.repository.name }}/${{ github.event.repository.name }}/Godot_v4.6.1-stable_export_templates.tpz
+          mv templates/* .
+          rmdir templates
+
+      - name: Import project
+        run: |
+          ./godot --headless --path SpaceHunter_game --import || true
+
+      - name: Build Windows EXE
+        run: |
+          mkdir -p build
+          ./godot --headless --path SpaceHunter_game \
+            --export-release "Windows Desktop" \
+            ../build/SpaceHunter.exe
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: windows-build
+          path: build/
