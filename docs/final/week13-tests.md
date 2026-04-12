@@ -1,16 +1,13 @@
-## This week focuses on strengthening system reliability by adding automated tests that protect against regressions, validate recent fixes, and ensure stability in critical gameplay systems.
+# Week 13 Regression Protection + Test Strengthening
+## Overview
+ This week focuses on strengthening system reliability by adding automated tests that protect against regressions, validate recent fixes, and ensure stability in critical gameplay systems.
 
-### We introduced 4 new tests covering:
+Four new automated tests added to `res://tests/test_main.gd` this week.
 
 - Regression bugs
 - Refactored systems
 - Error handling and observability behavior
 
----
-# Week 13 Regression Protection + Test Strengthening
-
-## Overview
-Four new automated tests added to `res://tests/test_main.gd` this week.
 All tests run via GitHub Actions on a single push using GUT headless mode.
 
 ---
