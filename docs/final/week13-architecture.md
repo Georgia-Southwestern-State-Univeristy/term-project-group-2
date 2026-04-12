@@ -100,7 +100,7 @@ Location:
 - Runs checks on pull requests
 - Helps maintain code quality and consistency
 
-## Data Flow (Simplified)
+## Data Flow
 
 ```
 [Player Input (Keyboard)]
