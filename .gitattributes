@@ -1,0 +1,5 @@
+*.tscn binary
+*.tres binary
+*.scn binary
+
+# Treat Godot scene and resource files as binary to prevent merge conflicts
