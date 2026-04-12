@@ -1,7 +1,7 @@
 ## Sprint goal: Adding regression and reliability test to enhance  product reliability by Sunday
 
 ## Committed items: 5–8 backlog items maximum
-### 1. Add edge case test for gameplay logic
+### 1. Add edge case test for gameplay logic - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/299
 #### Improve robustness of rule validation
 - Actions:
   - Add tests for:
@@ -10,12 +10,12 @@
     - Boundary conditions (score = 0, attempts = 0)
 - Acceptance Criteria:
   - Tests fail when logic is intentionally broken
-- Tests pass in CI pipeline
+- Tests pass in CI pipeline - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/actions/runs/24242877148/job/70781589821
 - Definition of Done:
   - Coverage increased for core gameplay modules
   - No flaky tests
 
-### 2. Add binary handling for scene files
+### 2. Add binary handling for scene files - 
 #### Configure Git to prevent merge conflicts in .tscn files
 - Actions:
   - Add *.tscn merge=binary to .gitattributes
@@ -27,7 +27,7 @@
   - Merged to main via PR
   - Verified by simulating a conflict
 
-### 3. Define stress test scenarios and using ADMIN mode
+### 3. Define stress test scenarios and using ADMIN mode - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/298 , https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/299
 #### Identify edge cases for performance validation. Validate performance under extreme conditions
 - Actions:
   - Use ADMIN mode to simulate high score states
