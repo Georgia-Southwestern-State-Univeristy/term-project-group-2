@@ -52,7 +52,7 @@
 - Definition of Done:
   - Verified via code search and runtime check
     
-### 5. Collect and document feature request
+### 5. Collect and document feature request- https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/324
 #### Capture all proposed features from the game lead in a structured format. Evaluate each feature against architecture and risk
 - Actions:
   - Schedule review session with game lead
