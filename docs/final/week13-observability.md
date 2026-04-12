@@ -1,54 +1,11 @@
 # Week 13 – Observability + Support Visibility
 
 ## Overview
-This document outlines improvements made to enhance observability and support visibility in our Godot 4.6.2 game project. These changes make internal game state, errors, and system behavior more visible to developers and testers, making it easier to debug gameplay issues, monitor runtime behavior, and support future development.
+This document outlines improvements made to enhance observability and support visibility in our Godot 4.6.1 game project. These changes make internal game state, errors, and system behavior more visible to developers and testers, making it easier to debug gameplay issues, monitor runtime behavior, and support future development.
 
 ---
 
-## 1. Centralized Debug Logging System
-
-### Description
-Implemented a centralized logging utility script (e.g., `Logger.gd`) to standardize debug output across the game.
-
-### Issue / Blind Spot
-Previously, debugging relied on scattered `print()` statements across scripts, making it difficult to trace issues or filter important information.
-
-### Where It Applies
-All GDScript files (player logic, enemy behavior, game manager, UI scripts)
-
-### Improvement Details
-- Created a global logging script (autoload singleton)
-- Added log levels:
-  - INFO
-  - WARNING
-  - ERROR
-- Included contextual information:
-  - Scene name
-  - Function name
-  - Timestamp (optional)
-
-**Example:**
-```gdscript
-Logger.info("Player spawned", "Player.gd")
-```
-### Before
-- Random print() statements
-- No structure or filtering
-- Hard to debug complex interactions
-
-### After
-- Structured, consistent logs
-- Easier debugging and tracing
-- Cleaner output in Godot console
-
-### Benefit to Maintainers
-
-Future developers can quickly understand system behavior and locate issues without digging through multiple scripts.
-
-### PR Reference
-PR #12 – Centralized Logging System
-
-## 2. Improved Error Handling and Fallback UI
+## 1. Improved Error Handling and Fallback UI
 ### Description
 
 Added better error handling and user feedback in UI scenes to handle failures gracefully.
@@ -87,9 +44,9 @@ Retry button for failed actions
 Makes bugs easier to reproduce and diagnose, especially during testing or demos.
 
 ### PR Reference
-PR #13 – Error Handling + Fallback UI
+PR #324 – Error Handling + Fallback UI - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/324
  
-## 3. Startup Validation (Configuration Checks)
+## 2. Startup Validation (Configuration Checks)
 ### Description
 
 Added validation checks when the game starts to ensure required resources, UI nodes, and input mappings are available and correctly configured.
@@ -153,7 +110,7 @@ These checks surface configuration problems immediately at startup, making them 
 ### PR Reference
 PR #315 – Startup Validation Checks - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/315
 
-## 4. Debug Overlay / In-Game Diagnostics
+## 3. Debug Overlay / In-Game Diagnostics
 ### Description
 
 Added an optional debug overlay and runtime diagnostics tools to monitor game behavior in real time.
@@ -196,4 +153,4 @@ $Label.text = "FPS: " + str(Engine.get_frames_per_second())
 Helps developers quickly understand game behavior, reproduce issues, and test features without repeatedly modifying code.
 
 ### PR Reference
-PR #15 – Debug Overlay + Diagnostics
+PR #315, 307, 298 – Debug Overlay + Diagnostics - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/315, https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/307, https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/298
