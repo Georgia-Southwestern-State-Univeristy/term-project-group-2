@@ -151,7 +151,7 @@ These checks surface configuration problems immediately at startup, making them 
 - Reduces debugging time and onboarding effort
 
 ### PR Reference
-PR #14 – Startup Validation Checks
+PR #315 – Startup Validation Checks - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/315
 
 ## 4. Debug Overlay / In-Game Diagnostics
 ### Description
