@@ -139,3 +139,12 @@ Location:
 - Core logic is centralized in Main.gd (tight coupling)
 - Limited separation between UI and game logic
 - No external analytics or backend integration
+
+## Future Improvements
+- Split Main.gd into smaller components:
+  - GameManager
+  - UIManager
+  - Spawner
+- Expand test coverage with GUT
+- Add structured logging (Logger system)
+- Improve observability and debugging tools
