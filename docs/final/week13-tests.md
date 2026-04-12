@@ -1,7 +1,13 @@
 # Week 13 Regression Protection + Test Strengthening
-
 ## Overview
+ This week focuses on strengthening system reliability by adding automated tests that protect against regressions, validate recent fixes, and ensure stability in critical gameplay systems.
+
 Four new automated tests added to `res://tests/test_main.gd` this week.
+
+- Regression bugs
+- Refactored systems
+- Error handling and observability behavior
+
 All tests run via GitHub Actions on a single push using GUT headless mode.
 
 ---
@@ -87,7 +93,7 @@ no message is sent when game_over is true.
 ## CI Evidence
 - All 4 tests pass in GUT headless mode via GitHub Actions
 - CI runs on the push to main branch. **All 4 tests in a single push**.
-- Link:
+- Link: https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/actions/runs/24242877148/job/70781589821, https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/actions/runs/24192369938/job/70612797089
 
 ## Test File Location
 `res://tests/test_main.gd`
