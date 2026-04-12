@@ -132,7 +132,9 @@ Covers:
 
 ### Architecture
 ```
-dosc/adr/ADR-001.md
+docs/final/week13-architecture.md
+docs/architecture/ADR-001.md
+
 ```
 Includes system design and diagrams.
 
@@ -162,32 +164,47 @@ Includes system design and diagrams.
 │ │ ├─ beta-plan.md                   # Beta planning (weeks 9–12)
 │ │ ├─ bug-triage.md                  # Bug tracking and prioritization
 │ │ ├─ observability.md               # Observability and debugging improvements
+│ │ ├─ week10-sprint.md               # Week 10 sprint goals
 │ │ ├─ week10-ux.md                   # UX testing and improvements
 │ │ ├─ week11-ci.md                   # CI setup and validation
 │ │ ├─ week11-e2e.md                  # End-to-end testing
 │ │ ├─ week11-reliability.md          # Reliability and failure handling
+│ │ ├─ week11-sprint.md               # Week 11 sprint goals
+│ │ ├─ week11-status.md               # Week 11 sprint status
 │ │ ├─ week12-known-issues.md         # Known issues in beta
 │ │ ├─ week12-quality.md              # Quality assurance summary
 │ │ └─ week12-retro.md                # Team retrospective
+│ │ ├─ week9-pr-index.md              # Week 9 PR index
+│ │ ├─ week9-sprint.md                # Week 9 sprint goals
 │ ├─ data/
 │ │ └─ model.md                       # Data model / ERD and relationships
 │ ├─ deployment/
 │ │ └─ beta-deploy.md                 # Instructions to run/deploy the beta version
+│ ├─ final/
+│ │ └─ week13-observability.md        # Week 13 application observability
+│ │ └─ week13-sprint.md               # Week 13 sptint goal
+│ │ └─ week13-tests.md                # Week 13 adding regression and stress testing
+│ ├─ handoff/
+│ │ └─ hand-off-draft.md              # Project hand off draft document
 │ ├─ mvp/
-│ │ ├─ mvp.md                         # MVP definition
-│ │ ├─ mvp-checklist.md               # Completed vs pending features
-│ │ ├─ scope-lock.md                  # Locked scope and risks
 │ │ ├─ demo-readiness.md              # Demo preparation
-│ │ └─ release-notes-midterm.md       # Midterm release notes
+│ │ ├─ explicit-non-goals.md          # Mentioning explicit non goals for the project
+│ │ ├─ midterm-demo.md                # Mid term Demo preparation
+│ │ ├─ midterm-snapshot.md            # Mid term snapshot document
+│ │ ├─ mvp-checklist.md               # Completed vs pending features
+│ │ ├─ mvp.md                         # MVP definition
+│ │ ├─ release-notes-midterm.md       # Mid term release noted document mentioning what is being released
+│ │ ├─ scope-lock.md                  # Locked scope and risks
 │ ├─ releases/
 │ │ └─ beta-release.md                # Beta release notes (features, limitations, scope)
 │ ├─ security/
+│ │ ├─ auth.md                        # Auth security documentation
 │ │ └─ week10-security-notes.md       # Security considerations and validation
 │ ├─ team/
+│ │ ├─ MARIOPEHAIRE.md                # Team member roles and contributions
+│ │ ├─ OLGARAU.md                     # Team member roles and contributions
+│ │ └─ RAJESHAGGARWAL.md              # Team member roles and contributions
 │ │ ├─ definition-of-done.md          # Team definition of done
-│ │ ├─ MARIOP.md                      # Team member roles and contributions
-│ │ ├─ OLGARAU.md
-│ │ └─ RAJESHAGGARWAL.md
 ├─ tests/
 │ ├─ test_code.gd                     # Basic test scaffolding
 │ └─ test_game_rules.gd               # Core tests (happy path, failure case, boundary test)
@@ -200,7 +217,7 @@ Includes system design and diagrams.
 ### Known Issues (Beta)
 See:
 ```
-docs/beta/week12-known-issues.md
+docs/handoff/hand-off-draft.md
 ```
 
 ### Contributing
