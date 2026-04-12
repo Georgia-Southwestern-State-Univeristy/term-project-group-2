@@ -102,7 +102,7 @@ func _on_CrystalTimer_timeout():
 	drop.speed = drop_speed
 
 func _on_platform_area_entered(area: Area2D) -> void:
-	#print("platform hit: ", area.name)
+	
 	if game_over:
 		return
 	if area.get("points") != null:
@@ -124,7 +124,7 @@ func _on_platform_area_entered(area: Area2D) -> void:
 		show_message(orb_messages[randi() % orb_messages.size()])
 
 func _on_catcher_area_entered(area: Area2D) -> void:
-	#print("catcher hit: ", area.name)
+	
 	if game_over:
 		return
 	if area.get("points") != null:
