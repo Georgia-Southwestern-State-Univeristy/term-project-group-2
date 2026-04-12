@@ -133,7 +133,7 @@ Covers:
 ### Architecture
 ```
 docs/final/week13-architecture.md
-docs/architecture/ADR-001.md
+docs/architecture/architecture.md
 
 ```
 Includes system design and diagrams.
@@ -158,11 +158,11 @@ Includes system design and diagrams.
 │ ├─ adr/
 │ │ ├─ ADR-001.md                     # Architecture Decision Record (system design)
 │ │ └─ ADR-001.md.jpeg                # Architecture diagram image
+│ │ ├─ ADR-002.md                     # Updated Architecture Decision Record (system design)
 │ ├─ api/
 │ │ └─ openapi.yaml                   # API contract (if applicable to MVP scope)
 │ ├─ architecture/
-│ │ ├─ ADR-001.md                     # Updated Architecture Decision Record (system design)
-│ │ └─ ADR-002.jpeg                   # Updated Architecture diagram image
+│ │ ├─ architecture.md                # Updated Architecture Decision Record diagram (system design)
 │ ├─ beta/
 │ │ ├─ beta-plan.md                   # Beta planning (weeks 9–12)
 │ │ ├─ bug-triage.md                  # Bug tracking and prioritization
@@ -184,10 +184,11 @@ Includes system design and diagrams.
 │ ├─ deployment/
 │ │ └─ beta-deploy.md                 # Instructions to run/deploy the beta version
 │ ├─ final/
+│ │ └─ week13-architecture.md         # Updated Architecture Decision Record diagram (system design)
 │ │ └─ week13-observability.md        # Week 13 application observability
+│ │ └─ week13-refactoring.md          # Refactoring and code health improvements
 │ │ └─ week13-sprint.md               # Week 13 sptint goal
 │ │ └─ week13-tests.md                # Week 13 adding regression and stress testing
-│ │ └─ week13-architecture.md         # Updated architecture before the project hand-off
 │ ├─ handoff/
 │ │ └─ hand-off-draft.md              # Project hand off draft document
 │ ├─ mvp/
@@ -212,6 +213,7 @@ Includes system design and diagrams.
 ├─ tests/
 │ ├─ test_code.gd                     # Basic test scaffolding
 │ └─ test_game_rules.gd               # Core tests (happy path, failure case, boundary test)
+├─ .gitattributes                     # Adding binary to git attributes
 ├─ CONTRIBUTING.md                    # Contribution guidelines
 ├─ PULL_REQUEST_TEMPLATE.md           # PR checklist and expectations
 └─ README.md                          # Project overview and setup instructions
