@@ -58,6 +58,9 @@ func start_shake(intensity, duration):
 	shake_duration = duration
 
 func show_message(text):
+	if not is_instance_valid($UILayer/DialogueBox):
+		push_error("DialogueBox node not found")
+		return
 	if is_typing:
 		return
 	$UILayer/DialogueBox.visible = true
