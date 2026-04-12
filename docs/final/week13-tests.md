@@ -8,7 +8,6 @@ Four new automated tests added to `res://tests/test_main.gd` this week.
 - Refactored systems
 - Error handling and observability behavior
 
-All tests run via GitHub Actions on a single push using GUT headless mode.
 
 ---
 
@@ -90,13 +89,31 @@ no message is sent when game_over is true.
 
 ---
 
+### CI Verification
+All tests run via GitHub Actions on a single push using GUT headless mode.
+
+---
+
 ## CI Evidence
-- All 4 tests pass in GUT headless mode via GitHub Actions
+- All 4 tests pass in GUT headless mode via GitHub Actions. All tests were executed through the project's CI pipeline
+
+- PR - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/298
 - CI runs on the push to main branch. **All 4 tests in a single push**.
-- Link: https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/actions/runs/24242877148/job/70781589821, https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/actions/runs/24192369938/job/70612797089
+  - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/actions/runs/24242877148/job/70781589821
+  - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/actions/runs/24192369938/job/70612797089
+
+Example:
+
+- All tests passed successfully
+- No regressions detected
+- Build status: Passing
+
 
 ## Test File Location
 `res://tests/test_main.gd`
 
 ## Total Tests in Suite
 12 tests total 8 from previous weeks + 4 new this week
+
+---
+This strengthens overall system stability and reduces the risk of regressions during continued development.
