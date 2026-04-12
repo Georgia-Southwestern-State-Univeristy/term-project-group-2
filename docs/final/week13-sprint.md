@@ -15,7 +15,7 @@
   - Coverage increased for core gameplay modules
   - No flaky tests
 
-### 2. Add binary handling for scene files - 
+### 2. Add binary handling for scene files - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/322
 #### Configure Git to prevent merge conflicts in .tscn files
 - Actions:
   - Add *.tscn merge=binary to .gitattributes
@@ -43,7 +43,7 @@
   - Shared with team
   - Results documented
 
-### 4. Remove debug statements
+### 4. Remove debug statements - https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/320
 #### Ensure clean production output
 - Actions:
   - Remove or gate all debug print statements
