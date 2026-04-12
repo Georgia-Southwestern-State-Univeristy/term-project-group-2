@@ -160,6 +160,9 @@ Includes system design and diagrams.
 │ │ └─ ADR-001.md.jpeg                # Architecture diagram image
 │ ├─ api/
 │ │ └─ openapi.yaml                   # API contract (if applicable to MVP scope)
+│ ├─ architecture/
+│ │ ├─ ADR-001.md                     # Updated Architecture Decision Record (system design)
+│ │ └─ ADR-002.jpeg                   # Updated Architecture diagram image
 │ ├─ beta/
 │ │ ├─ beta-plan.md                   # Beta planning (weeks 9–12)
 │ │ ├─ bug-triage.md                  # Bug tracking and prioritization
@@ -184,6 +187,7 @@ Includes system design and diagrams.
 │ │ └─ week13-observability.md        # Week 13 application observability
 │ │ └─ week13-sprint.md               # Week 13 sptint goal
 │ │ └─ week13-tests.md                # Week 13 adding regression and stress testing
+│ │ └─ week13-architecture.md         # Updated architecture before the project hand-off
 │ ├─ handoff/
 │ │ └─ hand-off-draft.md              # Project hand off draft document
 │ ├─ mvp/
