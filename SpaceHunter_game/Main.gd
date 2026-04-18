@@ -1,52 +1,16 @@
 extends Node2D
 
-@export var GoodDrop: PackedScene
-@export var BadDrop: PackedScene
-@export var bad_chance: float = 0.15
 var score = 0
 var life = 5
 var game_over = false
 var stars = []
-var drop_speed = 200.0
-var orbs_since_message = 0
-var asteroids_since_message = 0
-var is_typing = false
 var shake_intensity = 0.0
 var shake_duration = 0.0
 var admin_mode = false
 
-var orb_messages = [
-	"Great job!",
-	"Awesome catch!",
-	"Energy secured!",
-	"Nice one!",
-	"You are a natural!",
-	"Keep it up!",
-	"Excellent flying!",
-	"That is what I am talking about!"
-]
-
-var asteroid_messages = [
-	"Be careful out there!",
-	"This is dangerous!",
-	"Watch your step!",
-	"That one hurt!",
-	"Stay focused!",
-	"Avoid those rocks!",
-	"Shields taking damage!",
-	"That was close!"
-]
-
-var idle_messages = [
-	"It is so good to be a space hunter!",
-	"I am glad to help!",
-	"Space is full of surprises.",
-	"Stay sharp out there.",
-	"The stars are beautiful tonight.",
-	"I have your back, pilot.",
-	"Sensors are clear... for now.",
-	"What a time to be alive!"
-]
+var messenger: Node
+var scoreboard: Node
+var spawner: Node
 
 func orb_pulse():
 	$Camera2D.zoom = Vector2(1.05, 1.05)
@@ -57,30 +21,30 @@ func start_shake(intensity, duration):
 	shake_intensity = intensity
 	shake_duration = duration
 
-func show_message(text):
-	if not is_instance_valid($UILayer/DialogueBox):
-		push_error("DialogueBox node not found")
-		return
-	if is_typing:
-		return
-	$UILayer/DialogueBox.visible = true
-	$UILayer/DialogueBox/NameLabel.text = "> Messenger"
-	$UILayer/DialogueBox/MessageLabel.text = ""
-	is_typing = true
-	var full_text = text
-	var i = 0
-	while i < full_text.length():
-		$UILayer/DialogueBox/MessageLabel.text += full_text[i]
-		i += 1
-		await get_tree().create_timer(0.05).timeout
-	await get_tree().create_timer(2.5).timeout
-	$UILayer/DialogueBox.visible = false
-	is_typing = false
-
 func _ready():
+	# Setup Messenger
+	messenger = preload("res://scripts/Messenger.gd").new()
+	add_child(messenger)
+	messenger.setup($UILayer/DialogueBox)
+
+	# Setup Scoreboard
+	scoreboard = preload("res://scripts/Scoreboard.gd").new()
+	add_child(scoreboard)
+	scoreboard.setup($Menu/Scoreboard)
+
+	# Setup Spawner
+	spawner = preload("res://scripts/Spawner.gd").new()
+	add_child(spawner)
+	spawner.setup(self)
+	spawner.GoodDrop = preload("res://Crystal.tscn")
+	spawner.BadDrop = preload("res://Asteroid.tscn")
+
+	# UI init
 	$Menu/Score.text = "Score: 0"
 	$Menu/Life.text = "Attempts: 5"
 	$Menu/Message.hide()
+
+	# Stars
 	for i in 80:
 		var star = ColorRect.new()
 		var sz = randf_range(1, 2.5)
@@ -91,21 +55,9 @@ func _ready():
 		stars.append({"node": star, "speed": randf_range(10, 40)})
 
 func _on_CrystalTimer_timeout():
-	if game_over:
-		return
-	var scene = GoodDrop
-	if randf() < bad_chance:
-		scene = BadDrop
-	var drop = scene.instantiate()
-	add_child(drop)
-	drop.add_to_group("drops")
-	var screen_w = get_viewport_rect().size.x
-	drop.position.x = randf_range(80, screen_w - 80)
-	drop.position.y = -50
-	drop.speed = drop_speed
+	spawner.spawn()
 
 func _on_platform_area_entered(area: Area2D) -> void:
-	
 	if game_over:
 		return
 	if area.get("points") != null:
@@ -116,18 +68,14 @@ func _on_platform_area_entered(area: Area2D) -> void:
 		else:
 			orb_pulse()
 			print("Energy orb +%d point, total points: %d" % [area.points, score])
+			messenger.on_orb_caught()
 	else:
 		score += 1
 	area.queue_free()
 	$Menu/Score.text = "Score: " + str(score)
-	drop_speed = min(400.0, 200.0 + score * 1.5)
-	orbs_since_message += 1
-	if orbs_since_message >= 3:
-		orbs_since_message = 0
-		show_message(orb_messages[randi() % orb_messages.size()])
+	spawner.update_speed(score)
 
 func _on_catcher_area_entered(area: Area2D) -> void:
-	
 	if game_over:
 		return
 	if area.get("points") != null:
@@ -137,24 +85,19 @@ func _on_catcher_area_entered(area: Area2D) -> void:
 				$Menu/Life.text = "Attempts: " + str(life)
 				print("Orb missed! -1 attempt, attempts remaining: %d" % life)
 			else:
-				print("Asteroid missed, no penalty, attempts remaining: %d" % life)
+				print("Admin mode - no penalty, attempts remaining: %d" % life)
 	area.queue_free()
-	asteroids_since_message += 1
-	if asteroids_since_message >= 3:
-		asteroids_since_message = 0
-		show_message(asteroid_messages[randi() % asteroid_messages.size()])
+	messenger.on_asteroid_missed()
 	if life < 1:
 		game_over = true
+		spawner.stop_all()
 		$CrystalTimer.stop()
-		var drops = get_tree().get_nodes_in_group("drops")
-		for child in drops:
-			child.queue_free()
-		_show_scoreboard()
+		scoreboard.show(score)
 
 func _on_MessengerTimer_timeout():
 	if game_over:
 		return
-	show_message(idle_messages[randi() % idle_messages.size()])
+	messenger.on_idle()
 
 func _process(delta):
 	if game_over and Input.is_action_just_pressed("restart"):
@@ -162,9 +105,9 @@ func _process(delta):
 	if Input.is_key_pressed(KEY_CTRL) and Input.is_key_pressed(KEY_SHIFT) and Input.is_action_just_pressed("ui_accept"):
 		admin_mode = !admin_mode
 		if admin_mode:
-			show_message("ADMIN MODE ON")
+			messenger.show_message("ADMIN MODE ON")
 		else:
-			show_message("ADMIN MODE OFF")
+			messenger.show_message("ADMIN MODE OFF")
 	if admin_mode and Input.is_action_just_pressed("ui_up"):
 		score += 50
 		$Menu/Score.text = "Score: " + str(score)
@@ -185,14 +128,6 @@ func _process(delta):
 
 func restart_game():
 	get_tree().reload_current_scene()
-
-func _show_scoreboard():
-	if not is_instance_valid($Menu/Scoreboard):
-		push_error("Scoreboard node not found")
-		return
-	$Menu/Scoreboard/VBox/FinalScore.text = "Final Score: %d" % score
-	$Menu/Scoreboard/VBox/RestartHint.text = "Press ENTER to play again"
-	$Menu/Scoreboard.visible = true
 
 func _on_ExitButton_pressed():
 	get_tree().quit()
