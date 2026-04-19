@@ -25,10 +25,10 @@ This guide is for:
 
 #### Run the Windows Build
 - Download the latest release (RC or final version)
-  - .Exe and .pck files are downloaded in .zip file
-- Extract the .zip file
+  - ```.Exe``` and ```.pck``` files are downloaded in ```.zip``` file
+- Extract the ``` .zip ``` file
 - Open the folder
-- Double-click the .exe file
+- Double-click the ```.exe``` file
 
 #### Starting the Game
 - Launch the game
@@ -45,7 +45,7 @@ This guide is for:
 - Catch energy orbs to increase your score
 - Avoid or manage asteroids
 - Survive as long as possible
-- Maintain your lives
+- Maintain your attempts
 
 ---
 ### Core Gameplay Workflow
