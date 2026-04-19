@@ -245,7 +245,6 @@ gdlint.
 - No persistent save or high score system
 - Session-based gameplay only
 - Minor UI inconsistencies in some cases
-- Occasional minor audio timing issues
 
 
 ### Contributing
