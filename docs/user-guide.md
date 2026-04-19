@@ -25,10 +25,10 @@ This guide is for:
 
 #### Run the Windows Build
 - Download the latest release (RC or final version)
-  - .Exe and .pck files are downloaded in .zip file
-- Extract the .zip file
+  - ```.Exe``` and ```.pck``` files are downloaded in ```.zip``` file
+- Extract the ``` .zip ``` file
 - Open the folder
-- Double-click the .exe file
+- Double-click the ```.exe``` file
 
 #### Starting the Game
 - Launch the game
@@ -45,7 +45,7 @@ This guide is for:
 - Catch energy orbs to increase your score
 - Avoid or manage asteroids
 - Survive as long as possible
-- Maintain your lives
+- Maintain your attempts
 
 ---
 ### Core Gameplay Workflow
@@ -94,7 +94,6 @@ The following limitations are known in the Release Candidate:
 - Game progress resets every session
 - Limited UI polish (some alignment or visual inconsistencies may appear)
 - Minor performance variation on lower-end systems
-- Occasional audio timing inconsistencies in certain situations
 - Rare edge-case issues during gameplay or object interactions
 
 #### Tips for Players
