@@ -21,6 +21,11 @@ Platform: Desktop (Windows via Godot)
 **Release Page:**
 
 https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/releases/tag/rc-v0.9
+
+**Download link:**
+
+https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/actions/runs/24618159405/artifacts/6514798555
+
 ---
 #### **Release Scope**
 
