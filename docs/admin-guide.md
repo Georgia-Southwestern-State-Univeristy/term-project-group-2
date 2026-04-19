@@ -1,0 +1,31 @@
+Setup & Deployment Summary
+
+- SpaceHunter is built using Godot 4.6.
+  - Development:
+    - Clone the repository and open project.Godot in the Godot Editor.
+  - Exporting:
+    - Use the Project export menu to generate binaries for Windows, mac-OS, or Linux.
+    - Ensure the "Export With Debug" is checked if observability logs are needed for testing.
+- Configuration Notes
+  - Game-play Balances:
+    - Core variables (player speed, asteroid spawn rates) are located in the Global.gd singleton or the Player.tscn inspector variables.
+  - Input Map:
+    - Keybindings can be modified under Project Settings -> Input Map.
+- Maintenance & Recovery
+  - Restarting the Game:
+    - In-game logic handles state resets via get_tree().reload_current_scene().
+    - No external service restart is required.
+  - State Recovery:
+    - The game does not currently utilize persistent save files. If the game crashes, simply relaunching the application resets the environment to a clean state.
+  - Reseeding:
+    - Asteroid spawning uses randomize(). To test specific patterns, you can set a fixed seed in the AsteroidManager.gd script.
+- Logs & Diagnostics (Observability)
+  - To maintain and debug the system, check the following:
+    - Godot Console:
+      - View real-time errors and print() statements in the editor's "Output" and "Debugger" tabs.
+    - File Logs:
+      - Windows: %APPDATA%\\Godot\\app_userdata\\SpaceHunter\\logs\\
+      - Linux: ~/.local/share/godot/app_userdata/SpaceHunter/logs/
+      - macOS: ~/Library/Application Support/Godot/app_userdata/SpaceHunter/logs/
+    - GitHub Issues:
+      - Use the repository's "Issues" tab to track recurring bugs found in the log files.
