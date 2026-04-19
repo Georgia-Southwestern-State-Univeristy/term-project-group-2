@@ -77,7 +77,7 @@ After clicking **Play**:
 - Missing an orb:
   - Player attempts decrease
 - Catching an asteroid:
-  - Decreases increases
+  - Player score decreases
 - Missing an asteroid:
   - No negative effect on attempts and score
 - Negative events trigger feedback
