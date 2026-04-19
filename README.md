@@ -1,18 +1,22 @@
 # SpaceHunter
 
-SpaceHunter is a single-player arcade-style 2D game built in Godot where the player collects energy orbs while avoiding asteroids. The project is currently in **Beta**, with core gameplay complete and additional improvements focused on reliability, observability, and usability.
+SpaceHunter is a single-player arcade-style 2D game built in Godot where the player collects energy orbs while avoiding asteroids. The game emphasizes fast reaction, survival, and increasing difficulty over time.
+
+This repository represents the **Release Candidate (rc ```v0.9```)**, a near-final version with complete gameplay and stability improvements.
 
 ---
 
 ## Project Status
 
-**Current Stage:** Beta  
+**Current Stage:** Release Candidate (```rc-v0.9```)  
 **Engine:** Godot 4.6.1  
-**Platform:** Desktop (Linux/Windows via Godot runtime)   
+**Platform:** Windows (primarily built via executable)
+
 **Install Godot Engine 4.6.1:**   https://github.com/godotengine/godot/releases/download/4.6.1-stable/Godot_v4.6.1-stable_linux.x86_64.zip
 
 This repository is structured to allow another developer to:
-- Run the game locally
+
+- Run the game locally using a Windows executable
 - Verify core gameplay behavior
 - Understand system structure and design decisions
 - Review quality, testing, and release artifacts
@@ -21,123 +25,139 @@ This repository is structured to allow another developer to:
 
 ## Quick Start (Run the Game)
 
-### 1. Install Godot
-Download Godot 4.6.1:  
-https://github.com/godotengine/godot/releases/tag/4.6.1-stable
+### Option 1. Run Windows Build (Recommended)
+- Download the latest release (```rc-v0.9```) from GitHub
+- Extract the ```.zip``` file
+- Ensure the following files are in the same folder:
+  - ````SpaceHunter.exe````
+  - ````SpaceHunter.pck````
+- Double-click ````SpaceHunter.exe````
 
-### 2. Clone the Repository
+
+### Option 2. Run in Godot (Development Mode)
+- Install Godot 4.6.1
+```` https://github.com/godotengine/godot/releases/tag/4.6.1-stable ````
+- Clone the repository:
 ```bash
 git clone <https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2>
 cd <SpaceHunter_game>
 ```
+- Open Godot
+- Import:
+````SpaceHunter_game/project.godot````
+- Press **F5** to run
 
-### 3. Open Project
-- Launch Godot
-- Import project.godot from SpaceHunter_game/
+----
 
-### 4. Run
-- Press F5 to start the game
+### How to Play
 
-### Expected Gameplay (MVP Verification)
+#### Starting the Game
 
-After running the game:
+- Launch the game
+- The **main screen** appears
+- Click **Play** to begin
 
 #### Controls
-Move: Left / Right Arrow Keys
-Restart: Enter
 
-#### Core Loop
-1. Catch falling energy orbs
-2. Avoid asteroids
-3. Maintain lives and increase score
+- Move Left: ← or A
+- Move Right: → or D
+- Restart: Enter
+
+#### Objective
+
+- Catch energy orbs to increase score
+- Avoid asteroids
+- Survive as long as possible
+
+#### Core Gameplay Loop
+
+1. Objects fall from the top of the screen
+2. Player moves to catch or avoid them
+3. Score increases when collecting orbs
+4. Lives decrease when missing or hitting hazards
+5. Difficulty increases over time
+6. Game ends when lives reach zero
+7. Press **Enter** to restart
 
 ### Verify Correct Behavior
+
+After launching and clicking **Play**, the following should work:
+
+- Objects spawn continuously
+- Player movement is responsive
 - Catching an orb:
   - Score increases
-  - Orb disappears
-- Missing orb:
-  - Attempt decreases
-- Hitting asteroid:
-  - Score decreases
-  - Negative feedback (camera shake / message)
-- Game over:
-  - Scoreboard appears
-  - Restart option works
+  - Visual/audio feedback plays
+- Missing an orb:
+  - Lives decrease
+- Negative events:
+  - Feedback triggered
+- Game Over:
+  - Score is displayed
+  - Restart works
 
 This confirms the full gameplay loop:
 **Input → Game Logic → State Update → UI Feedback**
 
 
-#### Key Features (Beta)
-- Core gameplay loop implemented
+### Key Features (Release Candidate)
+- Complete core gameplay loop
 - Dynamic difficulty scaling (drop speed increases with score)
 - Player feedback system:
-  - Dialogue messages
-  - Camera shake and visual effects
-- Admin/debug mode (Ctrl + Shift + Enter)
-- Observability improvements:
-  - Structured logging system
-  - Startup validation checks
-  - Debug diagnostics overlay
+  - Visual effects
+  - On-screen messages
+- Stable game state transitions (play → game over → restart)
+- Debug/admin mode (Ctrl + Shift + Enter)
+- Observability:
+  - Structured logging
+  - Startup validation
 
-### Quality & Verification
-#### Automated Testing
+----
+
+### Documentation
+
+#### Start Here 
+
+- Runbook (verified setup and execution):
+```` docs/final/week14-runbook.md ````
+- User Guide:
+```` docs/user-guide.md ````
+
+### Technical Documentation
+
+- Admin / Maintanance Guide:
+```` /docs/admin-guide.md ````
+- Release Candidate Notes:
+```` docs/releases/release-candidate.md ````
+- Architecture:
+```` /docs/architecture/architecture.md ````
+```` /docs/final/week13-architecture.md ````
+-  Observability:
+```` docs/final/week13-observability.md ````
+
+### Testing & Quality
+#### Tests
 
 Located in:
-```
-/tests/
-```
+```` /tests/ ````
 
 Includes:
-- Happy path tests
-- Failure case (missing resource)
-- Boundary test
+- Core gameplay tests
+- Boundary and failure cases
 
 #### CI Pipeline
 Github Action workflow:
 ```
 .github/workflows/ci.yml
 ```
-- Runs checks on pull request
-- Enforce basic validation before merge
+- Runs validation checks on pull requests
+- Ensures baseline code quality
 
 #### Code Formatting
 ```
 gdformat.
 gdlint.
 ```
-
-### Release & Documentation
-#### Beta Release
-
-See:
-```
-docs/releases/beta-release.md
-```
-Includes:
-- Features delivered
-- Known limitations
-- Release scope
-
-### Observability & Debugging
-```
-docs/final/week13-observability.md
-```
-
-Covers:
-- Logging system
-- Error handling
-- Startup validation
-- Debug tools
-
-### Architecture
-```
-docs/final/week13-architecture.md
-docs/architecture/architecture.md
-
-```
-Includes system design and diagrams.
-
 
 ## Repository Structure
 ```
@@ -149,18 +169,11 @@ Includes system design and diagrams.
 │ ├─ .import/                         # Imported asset data generated by Godot
 │ ├─ addons/                          # External plugins or Godot add-ons
 │ ├─ scripts/                         # Core game logic (player, drops, game manager)
-│ ├─ scenes/                          # Game scenes (main scene, UI, objects)
-│ ├─ assets/                          # Sprites, backgrounds, and visual resources
 │ └─ tests/                           # In-engine test scripts (if applicable)
-├─ assignment/
-│ └─ GROUP PROJECT..                  # Course submission artifacts (.docx files)
 ├─ docs/                              # Project documentation and deliverables
-│ ├─ adr/
-│ │ ├─ ADR-001.md                     # Architecture Decision Record (system design)
-│ │ └─ ADR-001.md.jpeg                # Architecture diagram image
-│ │ ├─ ADR-002.md                     # Updated Architecture Decision Record (system design)
 │ ├─ api/
 │ │ └─ openapi.yaml                   # API contract (if applicable to MVP scope)
+│ │ └─ internal-api.md                # Interface Documentation
 │ ├─ architecture/
 │ │ ├─ architecture.md                # Updated Architecture Decision Record diagram (system design)
 │ ├─ beta/
@@ -189,6 +202,9 @@ Includes system design and diagrams.
 │ │ └─ week13-refactoring.md          # Refactoring and code health improvements
 │ │ └─ week13-sprint.md               # Week 13 sptint goal
 │ │ └─ week13-tests.md                # Week 13 adding regression and stress testing
+│ │ └─ week14-repo-polish.md          # Week 14 Polished Repo
+│ │ └─ week14-runbook.md              # Week 14 Deployment / runbook verification
+│ │ └─ week14-triage.md               # Week 14 Final bug triage and fix process
 │ ├─ handoff/
 │ │ └─ hand-off-draft.md              # Project hand off draft document
 │ ├─ mvp/
@@ -202,6 +218,7 @@ Includes system design and diagrams.
 │ │ ├─ scope-lock.md                  # Locked scope and risks
 │ ├─ releases/
 │ │ └─ beta-release.md                # Beta release notes (features, limitations, scope)
+│ │ └─ release-candidate.md           # Release Candidate Summary rc-v0.9
 │ ├─ security/
 │ │ ├─ auth.md                        # Auth security documentation
 │ │ └─ week10-security-notes.md       # Security considerations and validation
@@ -210,6 +227,8 @@ Includes system design and diagrams.
 │ │ ├─ OLGARAU.md                     # Team member roles and contributions
 │ │ └─ RAJESHAGGARWAL.md              # Team member roles and contributions
 │ │ ├─ definition-of-done.md          # Team definition of done
+│ ├─ admin-guide.md                   # Admin Guide / Maintanance Guide
+│ ├─ user-guide.md                    # User Guide / Maintanance Guide
 ├─ tests/
 │ ├─ test_code.gd                     # Basic test scaffolding
 │ └─ test_game_rules.gd               # Core tests (happy path, failure case, boundary test)
@@ -220,16 +239,19 @@ Includes system design and diagrams.
 
 ```
 
-### Known Issues (Beta)
-See:
-```
-docs/handoff/hand-off-draft.md
-```
+
+### Known Limitations (RC)
+- No settings menu (controls, graphics not configurable)
+- No persistent save or high score system
+- Session-based gameplay only
+- Minor UI inconsistencies in some cases
+- Occasional minor audio timing issues
+
 
 ### Contributing
 Please folow:   
-- CONTRIBUTING.md
-- PULL_REQUEST_TEMPLATE.md
+- ```` CONTRIBUTING.md ````
+- ```` PULL_REQUEST_TEMPLATE.md ````
 
 ### Team
 See:
