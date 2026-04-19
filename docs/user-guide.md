@@ -94,7 +94,6 @@ The following limitations are known in the Release Candidate:
 - Game progress resets every session
 - Limited UI polish (some alignment or visual inconsistencies may appear)
 - Minor performance variation on lower-end systems
-- Occasional audio timing inconsistencies in certain situations
 - Rare edge-case issues during gameplay or object interactions
 
 #### Tips for Players
