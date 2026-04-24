@@ -26,6 +26,6 @@
 |Name|Survey Date| Status|
 |---|---|---|
 |Rajesh Aggarwal| 23rd April 2026| Completed|
-|Olga Rau|  |  |
+|Olga Rau| 23rd April 2026| Completed|
 |Mario Pehaire|  |  |
 ---
