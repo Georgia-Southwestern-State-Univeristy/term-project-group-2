@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://t8dcywn0y2jk" path="res://energy_pixelart.png" id="1"]
 [ext_resource type="Script" uid="uid://co2fb4u032elg" path="res://Crystal.gd" id="2"]
+[ext_resource type="AudioStream" uid="uid://byyjcg2urugki" path="res://catch_sound.mp3" id="3_i1u28"]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 17.1503
@@ -19,3 +20,4 @@ scale = Vector2(0.58272, 0.574617)
 texture = ExtResource("1")
 
 [node name="CatchSound" type="AudioStreamPlayer" parent="." unique_id=1566800573]
+stream = ExtResource("3_i1u28")
