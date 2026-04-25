@@ -66,7 +66,7 @@ func _on_platform_area_entered(area: Area2D) -> void:
 		if area.points < 0:
 			start_shake(8.0, 0.4)
 			print("Asteroid hit %d point, total points: %d" % [area.points, score])
-			area.queue_free()
+			area.play_hit_sound()
 		else:
 			orb_pulse()
 			print("Energy orb +%d point, total points: %d" % [area.points, score])

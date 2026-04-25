@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b4vqp7g1l2a3f" path="res://Asteroid.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://ben3px6d5rcd2" path="res://asteroid_pixelart.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://cbfauqmdyhrbt" path="res://asteroid_sound.mp3" id="3_3jv40"]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 25.2741
@@ -16,3 +17,6 @@ shape = SubResource("1")
 position = Vector2(0.697738, -1.69804)
 scale = Vector2(0.338592, 0.333884)
 texture = ExtResource("2")
+
+[node name="HitSound" type="AudioStreamPlayer" parent="." unique_id=1294146466]
+stream = ExtResource("3_3jv40")
