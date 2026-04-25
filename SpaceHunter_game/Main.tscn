@@ -3,9 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://6c3s5eqvqr15" path="res://spaceship_pixelart.png" id="1"]
 [ext_resource type="Script" uid="uid://bpi0ucx6n01bj" path="res://platform.gd" id="2"]
 [ext_resource type="Script" uid="uid://b1bmpchj88pi2" path="res://Main.gd" id="3"]
-[ext_resource type="PackedScene" uid="uid://ryrwn0ynvt68" path="res://Crystal.tscn" id="4"]
 [ext_resource type="FontFile" uid="uid://slgo5u71pnrk" path="res://BitcountSingle-SemiBold.ttf" id="5"]
-[ext_resource type="PackedScene" uid="uid://dnc3eftal4gh1" path="res://Asteroid.tscn" id="7"]
 [ext_resource type="Texture2D" uid="uid://bw6s14f4m528f" path="res://finalscore_bg copy.png" id="7_wkp8b"]
 [ext_resource type="Texture2D" uid="uid://n2xr0pk7opsr" path="res://botUI.png" id="8"]
 [ext_resource type="Texture2D" uid="uid://t8dcywn0y2jk" path="res://energy_pixelart.png" id="8_c6i3y"]
@@ -383,8 +381,6 @@ cache/0/18/0/scale = 1.0
 
 [node name="Main" type="Node2D" unique_id=1348564318]
 script = ExtResource("3")
-GoodDrop = ExtResource("4")
-BadDrop = ExtResource("7")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1722527446]
 position = Vector2(513.359, 302.642)
