@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 var score = 0
 var life = 5
@@ -12,6 +12,7 @@ var messenger: Node
 var scoreboard: Node
 var spawner: Node
 
+	
 func orb_pulse():
 	$Camera2D.zoom = Vector2(1.05, 1.05)
 	await get_tree().create_timer(0.08).timeout
@@ -21,7 +22,7 @@ func start_shake(intensity, duration):
 	shake_intensity = intensity
 	shake_duration = duration
 
-func _ready():
+func _ready():	
 	# Setup Messenger
 	messenger = preload("res://scripts/Messenger.gd").new()
 	add_child(messenger)
@@ -128,6 +129,9 @@ func _process(delta):
 
 func restart_game():
 	get_tree().reload_current_scene()
+
+func _on_PlayButton_pressed():
+	get_tree().change_scene_to_file("res://Main.tscn")
 
 func _on_ExitButton_pressed():
 	get_tree().quit()
