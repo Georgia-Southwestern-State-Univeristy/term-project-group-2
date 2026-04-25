@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 var score = 0
 var life = 5
@@ -66,13 +66,15 @@ func _on_platform_area_entered(area: Area2D) -> void:
 		if area.points < 0:
 			start_shake(8.0, 0.4)
 			print("Asteroid hit %d point, total points: %d" % [area.points, score])
+			area.queue_free()
 		else:
 			orb_pulse()
 			print("Energy orb +%d point, total points: %d" % [area.points, score])
 			messenger.on_orb_caught()
+			area.play_catch_sound()
 	else:
 		score += 1
-	area.queue_free()
+		area.queue_free()
 	$Menu/Score.text = "Score: " + str(score)
 	spawner.update_speed(score)
 
