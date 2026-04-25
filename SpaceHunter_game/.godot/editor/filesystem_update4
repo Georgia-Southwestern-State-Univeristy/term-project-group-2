@@ -1,8 +1,9 @@
 res://default_env.tres
-res://Main.gd
-res://Crystal.tscn
+res://Asteroid.tscn
 res://addons/gut/gui/editor_globals.gd
 res://addons/gut/gui/EditorRadioButton.tres
-res://Crystal.gd
-res://Main.tscn
+res://Asteroid.gd
+res://Crystal.tscn
 res://MainMenu.tscn
+res://Main.tscn
+res://Main.gd
