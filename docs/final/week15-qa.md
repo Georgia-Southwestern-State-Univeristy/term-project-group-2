@@ -15,70 +15,70 @@
 ## Final QA Checklist
 
 ### Startup + Deployment
-- [ ] Game launches from .exe without Godot installed
-- [ ] Main menu appears immediately on launch with background image visible
-- [ ] Background music starts playing automatically on main menu
-- [ ] Play button hover effect activates across the full button width
-- [ ] Exit button closes the game completely from main menu
+-  Game launches from .exe without Godot installed
+-  Main menu appears immediately on launch with background image visible
+-  Background music starts playing automatically on main menu
+-  Play button hover effect activates across the full button width
+-  Exit button closes the game completely from main menu
 
 ### Auth + Access Control
-- [ ] Admin mode is OFF by default - lives decrease normally
-- [ ] Admin mode activates with Ctrl+Shift+Enter during gameplay
-- [ ] Messenger confirms "ADMIN MODE ON" when activated
-- [ ] Arrow Up adds 50 points only when admin mode is ON
-- [ ] Attempts do not decrease in admin mode when orbs are missed
-- [ ] Admin mode deactivates with Ctrl+Shift+Enter again
-- [ ] Messenger confirms "ADMIN MODE OFF" when deactivated
+-  Admin mode is OFF by default - lives decrease normally
+-  Admin mode activates with Ctrl+Shift+Enter during gameplay
+-  Messenger confirms "ADMIN MODE ON" when activated
+-  Arrow Up adds 50 points only when admin mode is ON
+-  Attempts do not decrease in admin mode when orbs are missed
+-  Admin mode deactivates with Ctrl+Shift+Enter again
+-  Messenger confirms "ADMIN MODE OFF" when deactivated
 
 ### Core Gameplay Workflow
-- [ ] Clicking Play transitions from main menu to game scene
-- [ ] Score starts at 0 and Attempts starts at 5
-- [ ] Stars scroll downward at varying speeds from game start
-- [ ] Energy orbs spawn and fall at correct speed
-- [ ] Asteroids spawn at approximately 15% of spawn events
-- [ ] Ship moves left and right with arrow keys
-- [ ] Ship stays within screen boundaries on both sides
-- [ ] Catching energy orb increases score and plays catch sound
-- [ ] Catching energy orb triggers orb pulse camera effect
-- [ ] Orb disappears immediately on catch
-- [ ] Catching asteroid decreases score and plays hit sound
-- [ ] Catching asteroid triggers camera shake
-- [ ] Asteroid disappears immediately on catch
-- [ ] Missing energy orb decreases attempts by 1
-- [ ] Missing asteroid has no penalty
-- [ ] Drop speed increases gradually as score grows
-- [ ] Drop speed never exceeds maximum cap
+-  Clicking Play transitions from main menu to game scene
+-  Score starts at 0 and Attempts starts at 5
+-  Stars scroll downward at varying speeds from game start
+-  Energy orbs spawn and fall at correct speed
+-  Asteroids spawn at approximately 15% of spawn events
+-  Ship moves left and right with arrow keys
+-  Ship stays within screen boundaries on both sides
+-  Catching energy orb increases score and plays catch sound
+-  Catching energy orb triggers orb pulse camera effect
+-  Orb disappears immediately on catch
+-  Catching asteroid decreases score and plays hit sound
+-  Catching asteroid triggers camera shake
+-  Asteroid disappears immediately on catch
+-  Missing energy orb decreases attempts by 1
+-  Missing asteroid has no penalty
+-  Drop speed increases gradually as score grows
+-  Drop speed never exceeds maximum cap
 
 ### Messenger Bot
-- [ ] Messenger sends positive message every 3 orbs caught
-- [ ] Messenger sends warning message with every 3 asteroids collided
-- [ ] Messenger sends idle message every 15 seconds
-- [ ] Messenger does not send messages after game over
-- [ ] Typing animation displays correctly
-- [ ] Dialogue box hides after message completes
+-  Messenger sends positive message every 3 orbs caught
+-  Messenger sends warning message with every 3 asteroids collided
+-  Messenger sends idle message every 15 seconds
+-  Messenger does not send messages after game over
+-  Typing animation displays correctly
+-  Dialogue box hides after message completes
 
 ### Game Over + Scoreboard
-- [ ] Game over triggers when attempts reach 0
-- [ ] All drops cleared from screen on game over
-- [ ] Game over sound plays when scoreboard appears
-- [ ] Background music starts when scoreboard appears
-- [ ] Scoreboard displays correct final score
-- [ ] Restart prompt visible on scoreboard
-- [ ] Pressing Enter restarts the game correctly
-- [ ] Exit button on scoreboard closes the game
-- [ ] All state resets correctly on restart (score, lives, speed)
+-  Game over triggers when attempts reach 0
+-  All drops cleared from screen on game over
+-  Game over sound plays when scoreboard appears
+-  Background music starts when scoreboard appears
+-  Scoreboard displays correct final score
+-  Restart prompt visible on scoreboard
+-  Pressing Enter restarts the game correctly
+-  Exit button on scoreboard closes the game
+-  All state resets correctly on restart (score, lives, speed)
 
 ### Error Handling
-- [ ] No errors in Godot Output during normal gameplay
-- [ ] No debug print statements visible during normal play
-- [ ] Game does not crash when restarting multiple times in a row
-- [ ] Messenger dialogue does not appear over scoreboard
+-  No errors in Godot Output during normal gameplay
+-  No debug print statements visible during normal play
+-  Game does not crash when restarting multiple times in a row
+-  Messenger dialogue does not appear over scoreboard
 
 ### UI + Usability
-- [ ] All text is readable at 1152x648 resolution
-- [ ] Score and Attempts labels update correctly during play
-- [ ] Play button hover effect works across full button area
-- [ ] Scoreboard layout is clean and readable
+-  All text is readable at 1152x648 resolution
+-  Score and Attempts labels update correctly during play
+-  Play button hover effect works across full button area
+-  Scoreboard layout is clean and readable
 
 ---
 
@@ -144,8 +144,8 @@ final presentation:
 ---
 
 ## Final Sign Off
-- [ ] All Critical items from week14-triage.md resolved
-- [ ] Demo path rehearsed at least once end to end
+-  All Critical items from week14-triage.md resolved
+-  Demo path rehearsed at least once end to end
 
 ## Link PRs
 https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/368
@@ -154,6 +154,6 @@ https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pu
 https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/371
 https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/371
 https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/373
-- [ ] .exe tested on Link PRsa machine without Godot installed
-- [ ] GitHub Actions CI passing on latest commit
-- [ ] All documentation committed and pushed to main branch
+-  .exe tested on Link PRsa machine without Godot installed
+-  GitHub Actions CI passing on latest commit
+-  All documentation committed and pushed to main branch
