@@ -95,6 +95,8 @@ func _on_catcher_area_entered(area: Area2D) -> void:
 		game_over = true
 		spawner.stop_all()
 		$CrystalTimer.stop()
+		$GameOverSound.play()
+		$BGMusic.play()
 		scoreboard.show(score)
 
 func _on_MessengerTimer_timeout():
