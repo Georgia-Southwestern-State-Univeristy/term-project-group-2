@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bjm58edickbhj" path="res://SpacehunterUIExitHover.png" id="8_5vvyt"]
 [ext_resource type="Texture2D" uid="uid://t8dcywn0y2jk" path="res://energy_pixelart.png" id="8_c6i3y"]
 [ext_resource type="Texture2D" uid="uid://boonhpnvw4i51" path="res://botUI_face.png" id="9"]
+[ext_resource type="AudioStream" uid="uid://byauqoo7f3nvs" path="res://game_over.mp3" id="11_20pc6"]
+[ext_resource type="AudioStream" uid="uid://c41rvw580h6ys" path="res://SpaceHunter_ost.mp3" id="12_5vvyt"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(85, 26.49579)
@@ -586,6 +588,12 @@ theme_override_font_sizes/font_size = 18
 [node name="MessengerTimer" type="Timer" parent="." unique_id=2081532970]
 wait_time = 5.0
 autostart = true
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="." unique_id=1323202611]
+stream = ExtResource("11_20pc6")
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=1953478927]
+stream = ExtResource("12_5vvyt")
 
 [connection signal="area_entered" from="platform" to="." method="_on_platform_area_entered"]
 [connection signal="timeout" from="CrystalTimer" to="." method="_on_CrystalTimer_timeout"]
