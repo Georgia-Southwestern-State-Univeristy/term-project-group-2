@@ -1,6 +1,7 @@
 ## Orbital Catcher: Final Release Candidate & Gameplay Systems Demo
 
 Presentation Structure (12–15 minutes)
+
 1. Introduction & Project Overview (1.5 min)
 Speaker: Rajesh
 
@@ -20,19 +21,13 @@ Speaker: Olga
 - Challenges faced and how they were solved
 - Brief mention of scripts (e.g., Main.gd, Spawner.gd)
 
-4. QA, Testing & Iteration (2 min)
-Speaker: Rajesh
-- Testing approach (manual playtesting, issue tracking)
-- Examples of bugs found and fixed
-- Importance of final QA for release readiness
-
-5. Final Polish & Improvements (2 min)
+4. Final Polish & Improvements (2 min)
 Speaker: Olga
 - UI improvements (scoreboard redesign)
 - Audio implementation
 - Performance and stability fixes
 
-6. Live Demo (3–4 min)
+5. Live Demo (3–4 min)
 Driver: Olga
 Support Commentary: Mario (If Olga require)
 - Olga plays the game live
@@ -42,6 +37,12 @@ Support Commentary: Mario (If Olga require)
   - Scoring system
   - Game over state
 
+6. QA, Testing & Iteration (2 min)
+Speaker: Rajesh
+- Testing approach (manual playtesting, issue tracking)
+- Examples of bugs found and fixed
+- Importance of final QA for release readiness
+  
 7. Reflection & Lessons Learned (1.5–2 min)
 Speaker: Mario (primary), Rajesh (add-on if needed)
 - What the team learned
@@ -69,6 +70,7 @@ Speaker: Mario (primary), Rajesh (add-on if needed)
 #### Olga (Lead Developer):
 - Technical systems
 - Final polish
+- Gameplay explanation
 - Demo driver
 
 #### Rajesh (Project Manager / QA / Docs):
@@ -77,10 +79,8 @@ Speaker: Mario (primary), Rajesh (add-on if needed)
 - Support reflection
 
 #### Mario (General Contributor):
-- Gameplay explanation
 - Demo narration
 - Reflection section
-
 
 ---
 ### Draft Slide Deck Outline
@@ -99,16 +99,16 @@ Visual diagram or simple flow
 Slide 4 — Technical Systems
 Spawning, scoring, collision
 
-Slide 5 — QA & Bug Fixing
-Example issues (score bug, debug logs, etc.)
-
-Slide 6 — Final Improvements
+Slide 5 — Final Improvements
 UI polish
 Audio
 Stability
 
-Slide 7 — Demo
+Slide 6 — Demo
 (Live or video)
+
+Slide 7 — QA & Bug Fixing
+Example issues (score bug, debug logs, etc.)
 
 Slide 8 — Reflection
 Lessons learned
