@@ -1,37 +1,31 @@
-[gd_scene format=2]
+[gd_scene format=3 uid="uid://djfvqhqqe3wg"]
 
-[node name="GameOver" type="Control"]
+[node name="GameOver" type="Control" unique_id=491666273]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="." unique_id=1145150931]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 14.0
 text = "Game Over"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Score" type="Label" parent="."]
+[node name="Score" type="Label" parent="." unique_id=1370412662]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 14.0
 text = "Score: 0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Rank" type="Label" parent="."]
+[node name="Rank" type="Label" parent="." unique_id=1264718189]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 14.0
 text = "Rank:"
 
-[node name="RestartButton" type="Button" parent="."]
+[node name="RestartButton" type="Button" parent="." unique_id=139840920]
+layout_mode = 0
 offset_right = 12.0
 offset_bottom = 20.0
 text = "Restart"
-__meta__ = {
-"_edit_use_anchors_": false
-}

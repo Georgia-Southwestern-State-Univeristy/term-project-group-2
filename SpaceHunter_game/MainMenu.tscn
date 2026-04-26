@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bjo6nha7yanr2"]
 
 [ext_resource type="Script" uid="uid://cqwaeb1uc75oq" path="res://MainMenu.gd" id="1_cqjrg"]
-[ext_resource type="Texture2D" uid="uid://c8n4srprti8i8" path="res://bg_space_hunter.png" id="1_i26rj"]
+[ext_resource type="Texture2D" uid="uid://bu6uigke81c74" path="res://SpacehunterUIMainMenu.png" id="2_e2xy7"]
 [ext_resource type="Texture2D" uid="uid://dylhlegvko230" path="res://play_button.png" id="3_e2xy7"]
 [ext_resource type="Texture2D" uid="uid://csa4v2gxc2bl4" path="res://play_button_hover.png" id="4_fimr5"]
 [ext_resource type="Texture2D" uid="uid://botqdusxlkf5i" path="res://exit_button.png" id="5_u7cqb"]
@@ -22,13 +22,13 @@ offset_left = -15.796631
 offset_top = -12.0
 offset_right = 1170.7096
 offset_bottom = 664.0
-texture = ExtResource("1_i26rj")
+texture = ExtResource("2_e2xy7")
 expand_mode = 1
 script = ExtResource("1_cqjrg")
 
 [node name="Panel" type="ColorRect" parent="." unique_id=1601464114]
 layout_mode = 0
-offset_top = 375.0
+offset_top = 463.0
 offset_right = 1156.0
 offset_bottom = 656.0
 color = Color(0, 0, 0, 0.7176471)
@@ -55,6 +55,7 @@ texture_normal = ExtResource("5_u7cqb")
 texture_hover = ExtResource("6_afec1")
 
 [node name="Label" type="Label" parent="." unique_id=621135230]
+visible = false
 layout_mode = 0
 offset_left = 398.0
 offset_top = 398.0
