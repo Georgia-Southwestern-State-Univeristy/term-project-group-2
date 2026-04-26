@@ -4,12 +4,12 @@
 [ext_resource type="Script" uid="uid://bpi0ucx6n01bj" path="res://platform.gd" id="2"]
 [ext_resource type="Script" uid="uid://b1bmpchj88pi2" path="res://Main.gd" id="3"]
 [ext_resource type="FontFile" uid="uid://slgo5u71pnrk" path="res://BitcountSingle-SemiBold.ttf" id="5"]
+[ext_resource type="Texture2D" uid="uid://7vdesxfprj2c" path="res://SpacehunterUIExit.png" id="7_20pc6"]
 [ext_resource type="Texture2D" uid="uid://bw6s14f4m528f" path="res://finalscore_bg copy.png" id="7_wkp8b"]
 [ext_resource type="Texture2D" uid="uid://n2xr0pk7opsr" path="res://botUI.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bjm58edickbhj" path="res://SpacehunterUIExitHover.png" id="8_5vvyt"]
 [ext_resource type="Texture2D" uid="uid://t8dcywn0y2jk" path="res://energy_pixelart.png" id="8_c6i3y"]
 [ext_resource type="Texture2D" uid="uid://boonhpnvw4i51" path="res://botUI_face.png" id="9"]
-[ext_resource type="Texture2D" uid="uid://botqdusxlkf5i" path="res://exit_button.png" id="9_c2ibq"]
-[ext_resource type="Texture2D" uid="uid://b6tm6a2nopwg2" path="res://exit_button_hover.png" id="10_j4qnp"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(85, 26.49579)
@@ -444,6 +444,7 @@ theme_override_fonts/font = SubResource("3")
 text = "GAME OVER"
 
 [node name="Scoreboard" type="Control" parent="Menu" unique_id=196171055]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -456,6 +457,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("7_wkp8b")
 
 [node name="VBox" type="Control" parent="Menu/Scoreboard" unique_id=16436922]
@@ -513,13 +516,13 @@ texture = ExtResource("8_c6i3y")
 
 [node name="ExitButton" type="TextureButton" parent="Menu/Scoreboard" unique_id=1439622551]
 layout_mode = 0
-offset_left = 474.0
-offset_top = 512.0
-offset_right = 988.0
-offset_bottom = 650.0
-scale = Vector2(0.35999876, 0.35999876)
-texture_normal = ExtResource("9_c2ibq")
-texture_hover = ExtResource("10_j4qnp")
+offset_left = 464.0
+offset_top = 504.0
+offset_right = 1309.0
+offset_bottom = 803.0
+scale = Vector2(0.23999876, 0.23999876)
+texture_normal = ExtResource("7_20pc6")
+texture_hover = ExtResource("8_5vvyt")
 
 [node name="Catcher" type="Area2D" parent="." unique_id=1215994210]
 position = Vector2(497.803, 598.212)
