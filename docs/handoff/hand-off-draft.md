@@ -1,108 +1,188 @@
-# Hand-Off Document (Draft)
+# Hand-Off Document (Final Draft)
 
 ## 1. System Overview
 
 This project is a 2D arcade-style game built using Godot 4.6.1. The player controls a spaceship that moves horizontally to collect falling energy objects while avoiding asteroids.
 
-Core gameplay mechanics:
-- The spaceship can move left and right
-- Energy objects fall from the top of the screen:
-  - Catching energy increases the score
+### Core Gameplay Mechanics
+- The spaceship moves left and right via keyboard input
+- Energy objects fall from the top:
+  - Catching energy increases score
   - Missing energy reduces attempts (lives)
-- Asteroids also fall:
-  - Colliding with asteroids decreases score
-- The player has a limited number of attempts (lives)
+- Asteroids fall as hazards:
+  - Collisions decrease score
+- The player has a limited number of attempts
 - The game ends when all attempts are exhausted
 
-The main game loop and logic are managed through `main.gd`, which handles:
-- Spawning falling objects (energy and asteroids)
+### Audio Features
+- Background music plays during gameplay
+- UI sound effects are triggered for interactions and feedback
+- Audio is integrated using Godot’s built-in audio system
+
+### UI Features
+- Improved main menu interface
+- Polished HUD displaying:
+  - Score
+  - Remaining attempts
+- Clear visual feedback for gameplay events
+
+### Core Controller
+The main game loop is managed by `main.gd`, responsible for:
+- Spawning energy objects and asteroids
 - Tracking score and attempts
 - Handling collisions and game state updates
 
-The system uses Godot’s scene-based architecture, with separate scenes/scripts for:
-- Player (spaceship)
+The system follows Godot’s scene-based architecture:
+- Player scene (spaceship)
 - Falling objects (energy, asteroids)
-- UI (score and attempts display)
+- UI scenes (menu and HUD)
+- Audio integrated within scene structure
 
 ---
 
-## 2. Stack and Tool Choices
+## 2. Architecture Snapshot
+
+### High-Level Structure
+- `main.gd` (central controller)
+- Player script (movement and input handling)
+- Object scripts (falling logic and collision)
+- UI scripts (HUD and menu updates)
+- Audio nodes (background music + UI SFX)
+
+### Design Notes
+- Logic is currently centralized in `main.gd`
+- Scene-based separation exists, but logic modularity can be improved
+- Audio integration is layered into existing scenes without a dedicated manager
+
+---
+
+## 3. Stack Rationale
 
 ### Game Engine
-- Godot 4.6.1
-  - Used for its built-in 2D engine, physics system, and scene management
-  - Enables rapid development using a node-based structure
+- **Godot 4.6.1**
+  - Lightweight and efficient for 2D games
+  - Built-in physics and scene system
+  - Rapid iteration and testing
 
 ### Programming Language
-- GDScript
+- **GDScript**
   - Native to Godot
-  - Used for implementing gameplay logic, UI updates, and object behavior
+  - Simple and tightly integrated with engine APIs
 
 ### Testing Framework
-- GUT (Godot Unit Test)
-  - Used to implement automated tests
-  - Covers gameplay logic such as scoring, attempts, and object interactions
-  - Helps prevent regressions in core mechanics
+- **GUT (Godot Unit Test)**
+  - Used for validating gameplay logic
+  - Covers scoring, attempts, and interactions
+  - Ensures regression safety
 
-### Version Control
-- Git + GitHub
-  - Used for collaboration and version tracking
-
-### CI (Continuous Integration)
-- GitHub Actions 
-  - Runs automated tests to ensure code stability
+### Version Control & CI
+- **Git + GitHub**
+- **GitHub Actions**
+  - Automated test execution
+  - Current CI status: consistently passing
 
 ---
 
-## 3. Setup / Run Summary
+## 4. Deployment / Setup Summary
 
 ### Prerequisites
-- Install Godot 4.6.1
+- Godot 4.6.1 installed
 
-### Setup Instructions
-1. Clone the repository: https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2
+### Setup
+1. Clone repository:
+   https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2
 2. Open Godot Engine
-3. Click “Import”
-4. Select the project folder "SpaceHunter_game"
+3. Import project (`SpaceHunter_game`)
 
 ### Running the Game
-1. Open the project in Godot
-2. Run the main scene (linked to `main.gd`)
-3. Use keyboard input to move the spaceship left/right
+1. Open project in Godot
+2. Run main scene
+3. Use keyboard input:
+   - Left / Right arrows to move
 
-### Running Tests (GUT)
-1. Ensure GUT is available under `addons/gut`
-2. Open the GUT panel in Godot
-3. Run all tests or selected test scripts
+### Running Tests
+1. Ensure GUT is in `/addons/gut`
+2. Open GUT panel
+3. Run all tests
+
+### Build / Distribution
+- Exported build available for **Windows platform**
+- Can be distributed as a standalone executable
 
 ---
 
-## 4. Known Weaknesses / Technical Debt
+## 5. Known Issues and Constraints
 
-### 1. Limited Test Coverage
-- Current tests focus on core mechanics (score, attempts)
-- Some gameplay scenarios (e.g., multiple simultaneous collisions) are not fully tested
+### 1. Screen Scaling Issue
+- When the game is maximized:
+  - UI may not scale correctly
+  - Player ship can move out of visible bounds
+- Cause: viewport scaling not fully responsive
 
-### 2. Centralized Logic in `main.gd`
-- A large portion of game logic is handled in a single script
-- This makes the code harder to maintain and extend
+### 2. Centralized Game Logic
+- `main.gd` contains a large portion of logic
+- Reduces maintainability and scalability
 
-### 3. Basic Collision Handling
-- Collision effects (score/attempt changes) are simple
-- Edge cases (e.g., overlapping collisions) may not be fully handled
+### 3. Limited Advanced Testing
+- Core gameplay is well-tested
+- Edge cases and integration scenarios need expansion
 
-### 4. Minimal Error Handling
-- Missing assets or invalid scene references may not always be handled gracefully
-- Logging and debugging tools are basic
+### 4. Keyboard-Only Input
+- No controller or mouse support
+- Limits accessibility
 
-### 5. Gameplay Balancing
-- Spawn rates and difficulty scaling are not fully tuned
-- Game progression may feel inconsistent
+---
+
+## 6. Recommended Next Steps
+
+### Architecture Improvements
+- Refactor `main.gd` into smaller components:
+  - GameManager
+  - SpawnManager
+  - ScoreManager
+  - AudioManager
+
+### UI & Responsiveness
+- Implement proper screen scaling and anchors
+- Ensure consistent layout across resolutions
+
+### Testing Expansion
+- Add integration tests for:
+  - Multiple collisions
+  - UI state transitions
+- Improve regression coverage
+
+### Gameplay Enhancements
+- Improve difficulty scaling
+- Fine-tune spawn rates and balancing
+
+---
+
+## 7. User / Admin Guidance
+
+### Player Controls
+- Move Left: Left Arrow Key or 'A'
+- Move Right: Right Arrow Key or 'D'
+
+### Gameplay Flow
+1. Launch game
+2. Start from main menu
+3. Collect energy objects to increase score
+4. Avoid asteroids
+5. Game ends when attempts reach zero
+
+### Admin / Developer Notes
+- Modify gameplay via `main.gd`
+- Adjust spawn rates and difficulty parameters directly in scripts
+- Audio settings managed within scene nodes
+- Tests can be executed through GUT panel
 
 ---
 
 ## Summary
 
-This project implements a functional 2D game with core mechanics including movement, scoring, and collision-based interactions. The system is built around Godot’s scene architecture and uses `main.gd` as the central controller.
+The project is a fully functional 2D arcade game with stable gameplay, integrated audio, polished UI, and consistent automated testing. A Windows build is available for distribution.
 
-While the game is playable and test coverage has been introduced using GUT, future improvements should focus on modularizing the code, increasing test coverage, and enhancing observability and gameplay experience.
+While the system is feature-complete for its scope, improvements in modular architecture, UI responsiveness, and expanded testing will further strengthen maintainability and scalability heading into final submission.
+
+
