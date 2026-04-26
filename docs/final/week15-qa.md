@@ -149,3 +149,12 @@ final presentation:
 - [ ] .exe tested on a machine without Godot installed
 - [ ] GitHub Actions CI passing on latest commit
 - [ ] All documentation committed and pushed to main branch
+
+## Link PRs for final high-priority fixes
+https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/368
+https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/369
+https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/370
+https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/371
+https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/371
+https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/pull/373
+
