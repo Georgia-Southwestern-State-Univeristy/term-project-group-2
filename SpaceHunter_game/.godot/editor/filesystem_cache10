@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1777168287
+::res://::1777170561
 ArchitectsDaughter-Regular.ttf::FontFile::2379511322149555578::1777156167::1777156182::1::::<><><>0<>0<>ee429e8c385071bafcbe61e7bb76b492<>res://.godot/imported/ArchitectsDaughter-Regular.ttf-26f5fab55185fc7b43984881cda2f592.fontdata::
 asteroid1.png::CompressedTexture2D::4237517088889849226::1777156168::1777156182::1::::<><><>0<>0<>13439be5d06eae28e235a1a7eb528c9c<>res://.godot/imported/asteroid1.png-b4da669b7c59edc2cf257736b8d198ed.ctex::
 Asteroid.gd::GDScript::4466249032037246341::1777156667::0::1::::<>Area2D<><>0<>0<><>::
@@ -14,7 +14,7 @@ Catcher.gd::GDScript::7462275567008539682::1777156167::0::1::::<>RefCounted<><>0
 catch_sound.mp3::AudioStreamMP3::4121048379408060516::1777156316::1777156317::1::::<><><>0<>0<>d6309e2a80cc42d2accec91119ce5a06<>res://.godot/imported/catch_sound.mp3-2bcc7d8e4f92165f973cca3be71b331f.mp3str::
 Crystal.gd::GDScript::5811530303683618372::1777156326::0::1::::<>Area2D<><>0<>0<><>::
 Crystal.tscn::PackedScene::1243827606819256003::1777159589::0::1::::<><><>0<>0<><>::uid://t8dcywn0y2jk::::res://energy_pixelart.png<>uid://co2fb4u032elg::::res://Crystal.gd<>uid://byyjcg2urugki::::res://catch_sound.mp3
-default_env.tres::Environment::5741851838678534325::1777168251::0::1::::<><><>0<>0<><>::
+default_env.tres::Environment::5741851838678534325::1777168292::0::1::::<><><>0<>0<><>::
 energy.png::CompressedTexture2D::1195721410104790615::1777156168::1777156182::1::::<><><>0<>0<>b35e7c60accb24a850b176fa5b37e4f2<>res://.godot/imported/energy.png-0996039cbd0b061e0fd4aca986da2f61.ctex::
 energy_pixelart.png::CompressedTexture2D::1401899512743841432::1777156168::1777156182::1::::<><><>0<>0<>2d552e173eb06fa4fa616248c46d96e1<>res://.godot/imported/energy_pixelart.png-57732a7c3461694e36b7400fbc573044.ctex::
 exit_button.png::CompressedTexture2D::3409265580552264952::1777156168::1777156182::1::::<><><>0<>0<>f3263f7ac9fe9e54ce4914b68ae93b98<>res://.godot/imported/exit_button.png-ea11afea608b89b5d872389e6f09d874.ctex::
@@ -35,7 +35,11 @@ platform.gd::GDScript::3457322142997409611::1777156168::0::1::::<>Area2D<><>0<>0
 play_button.png::CompressedTexture2D::8866947336699373805::1777156168::1777156182::1::::<><><>0<>0<>d2bbeb753c7b02c75e70d95e667c2121<>res://.godot/imported/play_button.png-c6659eb2fbf2022d9e670864776e465a.ctex::
 play_button_hover.png::CompressedTexture2D::6038040275781045871::1777156168::1777156182::1::::<><><>0<>0<>f931e85d71f89e34546230c310b543dd<>res://.godot/imported/play_button_hover.png-cba68d66209621f6b11f32440b0922fa.ctex::
 rules_bg.png::CompressedTexture2D::4368289323171280395::1777156168::1777156182::1::::<><><>0<>0<>83bc47aa05df2d18f85258dfcc0a09af<>res://.godot/imported/rules_bg.png-97cf4577a6a2737570500839f8cb9dc3.ctex::
+SpacehunterUIExit.png::CompressedTexture2D::2289585204604916372::1777170561::1777170562::1::::<><><>0<>0<>160d7d536be94b03904b1e817c1cf4ac<>res://.godot/imported/SpacehunterUIExit.png-6814367a6df8811e5b97dd83dfacb5b2.ctex::
+SpacehunterUIExitHover.png::CompressedTexture2D::3044773465560329643::1777170561::1777170562::1::::<><><>0<>0<>57af7e09ea14b3c192d9eb2ae84806d8<>res://.godot/imported/SpacehunterUIExitHover.png-ae374182f721e27985c82a826ab2f3ec.ctex::
 SpacehunterUIMainMenu.png::CompressedTexture2D::3855422223851181381::1777167943::1777168255::1::::<><><>0<>0<>546f70997f8032049ae76b3ea8491cbf<>res://.godot/imported/SpacehunterUIMainMenu.png-6538de9750e355ca390faf3c3653dd57.ctex::
+SpacehunterUIPlay.png::CompressedTexture2D::1721050425145810852::1777170558::1777170559::1::::<><><>0<>0<>091751a5fc6bbe5e9b34abe2cc62785a<>res://.godot/imported/SpacehunterUIPlay.png-551fcbebcbcf53d76dcdf07e9648ac72.ctex::
+SpacehunterUIPlayHover.png::CompressedTexture2D::5530955814905900199::1777170558::1777170559::1::::<><><>0<>0<>89ac2ed35811cee5b61cfba42807fe12<>res://.godot/imported/SpacehunterUIPlayHover.png-712893fbcd6f9282aa355e49f504bf64.ctex::
 SpaceHunter_ost.mp3::AudioStreamMP3::6863062548434652966::1777156168::1777156182::1::::<><><>0<>0<>657a7f67d38844e3f83b777c096fc013<>res://.godot/imported/SpaceHunter_ost.mp3-a15dab4a30a07462b4890247d7c47644.mp3str::
 spaceship1.png::CompressedTexture2D::3725607618711861960::1777156168::1777156182::1::::<><><>0<>0<>1472678d8f7d8c76ef7e9d7b072cc339<>res://.godot/imported/spaceship1.png-3b81595e96224eb2f83440c456e7ddf4.ctex::
 spaceship_pixelart.png::CompressedTexture2D::2181716711010273830::1777156168::1777156182::1::::<><><>0<>0<>307b11fb8680a875e9b1498594b0ef71<>res://.godot/imported/spaceship_pixelart.png-bafc9c7cd6e35047ab99de226ab3a733.ctex::
