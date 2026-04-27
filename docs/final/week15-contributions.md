@@ -1,6 +1,7 @@
 ## Individual Contribution Snapshot
 
-<img width="467" height="460" alt="image" src="https://github.com/user-attachments/assets/1f71c0f9-2381-42d1-9fa7-d9f0e4f8bf04" />
+<img width="464" height="463" alt="image" src="https://github.com/user-attachments/assets/6881e5a4-8a04-48f9-8aa1-b00fba40eff6" />
+
 
 https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2/graphs/contributors
 
