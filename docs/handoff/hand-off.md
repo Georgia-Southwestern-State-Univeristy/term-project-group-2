@@ -177,19 +177,26 @@ https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2
 
 ### Admin Mode
 
-An admin/debug mode is available for testing and development purposes.
+An admin/debug mode is available for testing and controlled gameplay scenarios.
 
 #### How to Activate and deactivate
 - Press: **Shift + Ctrl + Enter**
 
+#### Capabilities
+- **Increase Score**
+  - Press **Up Arrow** to increase score by +50 per input
+- **Invulnerability**
+  - Player does not lose attempts (lives) while admin mode is active
+
 #### Purpose
-- Provides internal control and testing capabilities
-- Intended for debugging and gameplay validation
+- Enables rapid testing of scoring logic
+- Allows validation of UI updates without gameplay constraints
+- Supports debugging without risk of game over
 
 #### Notes
-- This mode is not exposed through the UI
-- It is designed for developers and testers only
-- Behavior and available controls may require code inspection (`main.gd` or related scripts)
+- Admin mode is not exposed through the UI
+- Intended for developers and testers only
+- Behavior is implemented in core game logic (`main.gd`)
 
 ---
 
