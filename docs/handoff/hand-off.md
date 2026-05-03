@@ -173,6 +173,26 @@ https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2
 3. Avoid asteroids
 4. Game ends when attempts reach zero
 
+---
+
+### Admin Mode
+
+An admin/debug mode is available for testing and development purposes.
+
+#### How to Activate and deactivate
+- Press: **Shift + Ctrl + Enter**
+
+#### Purpose
+- Provides internal control and testing capabilities
+- Intended for debugging and gameplay validation
+
+#### Notes
+- This mode is not exposed through the UI
+- It is designed for developers and testers only
+- Behavior and available controls may require code inspection (`main.gd` or related scripts)
+
+---
+
 ### Developer Guidance
 - Core logic: `main.gd`
 - Gameplay tuning:
