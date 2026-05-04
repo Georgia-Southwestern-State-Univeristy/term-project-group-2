@@ -2,117 +2,152 @@
 
 SpaceHunter is a single-player arcade-style 2D game built in Godot where the player collects energy orbs while avoiding asteroids. The game emphasizes fast reaction, survival, and increasing difficulty over time.
 
-This repository represents the **Release Candidate (rc ```v0.9```)**, a near-final version with complete gameplay and stability improvements.
+This repository represents the **Final Release (final-```v1.0```)**, with complete gameplay and stability improvements.
 
 ---
 
 ## Project Status
 
-**Current Stage:** Release Candidate (```rc-v0.9```)  
+## 🔖 Final Release
+**Version:** ```v1.0```
+**Status:** Stable Final Release  
 **Engine:** Godot 4.6.1  
 **Platform:** Windows (primarily built via executable)
 
-**Install Godot Engine 4.6.1:**   https://github.com/godotengine/godot/releases/download/4.6.1-stable/Godot_v4.6.1-stable_linux.x86_64.zip
+---
 
-This repository is structured to allow another developer to:
+## 🚀 Project Overview
 
-- Run the game locally using a Windows executable
-- Verify core gameplay behavior
-- Understand system structure and design decisions
-- Review quality, testing, and release artifacts
+- Arcade-style reflex game
+- Keyboard-controlled spaceship movement
+- Score-based progression system
+- Lives/attempt system
+- Integrated audio (music + sound effects)
+- Automated testing using GUT
+- CI pipeline using GitHub Actions
 
 ---
 
-## Quick Start (Run the Game)
+## ▶️ Getting Started
 
-### Option 1. Run Windows Build (Recommended)
-- Download the latest release (```rc-v0.9```) from GitHub
-- Extract the ```.zip``` file
-- Ensure the following files are in the same folder:
-  - ````SpaceHunter.exe````
-  - ````SpaceHunter.pck````
-- Double-click ````SpaceHunter.exe````
+### Prerequisites
+- Godot Engine 4.6.1
 
+### Setup
+1. Clone the repository: https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2
+2. Open Godot Engine
+3. Import project: `SpaceHunter_game`
+4. Run the main scene
 
-### Option 2. Run in Godot (Development Mode)
-- Install Godot 4.6.1
-```` https://github.com/godotengine/godot/releases/tag/4.6.1-stable ````
-- Clone the repository:
-```bash
-git clone <https://github.com/Georgia-Southwestern-State-Univeristy/term-project-group-2>
-cd <SpaceHunter_game>
-```
-- Open Godot
-- Import:
-````SpaceHunter_game/project.godot````
-- Press **F5** to run
+---
 
-----
+## 🎮 Controls
 
-### How to Play
+- Move Left: `Left Arrow` or `A`
+- Move Right: `Right Arrow` or `D`
 
-#### Starting the Game
+### Admin Mode (Testing Only)
+- Activate: `Shift + Ctrl + Enter`
+- Increase Score: `Up Arrow` (+50)
+- No loss of attempts while active
 
-- Launch the game
-- The **main screen** appears
-- Click **Play** to begin
+---
 
-#### Controls
+## 🧪 Testing & CI
 
-- Move Left: ← or A
-- Move Right: → or D
-- Restart: Enter
+- Unit tests implemented using **GUT (Godot Unit Test Framework)**
+- Tests cover:
+- Scoring logic
+- Attempt/life system
+- Collision interactions
+- CI pipeline via **GitHub Actions**
+- Runs tests automatically on commits
+- Ensures no regression in core gameplay
 
-#### Objective
+---
 
-- Catch energy orbs to increase score
-- Avoid asteroids
-- Survive as long as possible
+## 📦 Build
 
-#### Core Gameplay Loop
+- Exported build available for **Windows**
+- Runs as standalone executable
 
-1. Objects fall from the top of the screen
-2. Player moves to catch or avoid them
-3. Score increases when collecting orbs
-4. Lives decrease when missing or hitting hazards
-5. Difficulty increases over time
-6. Game ends when lives reach zero
-7. Press **Enter** to restart
+---
 
-### Verify Correct Behavior
+## 📂 Documentation
 
-After launching and clicking **Play**, the following should work:
+All final project documentation is organized under `/docs`.
 
-- Objects spawn continuously
-- Player movement is responsive
-- Catching an orb:
-  - Score increases
-  - Visual/audio feedback plays
-- Missing an orb:
-  - Lives decrease
-- Negative events:
-  - Feedback triggered
-- Game Over:
-  - Score is displayed
-  - Restart works
+### 📌 Final Deliverables
+- `/docs/releases/final-release.md`  
+Final release notes, features, and limitations  
 
-This confirms the full gameplay loop:
-**Input → Game Logic → State Update → UI Feedback**
+- `/docs/final/final-repo-check.md`  
+Repository navigation and reviewer guide  
 
+- `/docs/final/final-presentation.md`  
+Presentation plan, speaker roles, and demo strategy  
 
-### Key Features (Release Candidate)
-- Complete core gameplay loop
-- Dynamic difficulty scaling (drop speed increases with score)
-- Player feedback system:
-  - Visual effects
-  - On-screen messages
-- Stable game state transitions (play → game over → restart)
-- Debug/admin mode (Ctrl + Shift + Enter)
-- Observability:
-  - Structured logging
-  - Startup validation
+- `/docs/final/final-defense.md`  
+Technical justification, trade-offs, and system analysis  
 
-----
+- `/docs/final/final-retrospective.md`  
+Team retrospective and engineering process evaluation  
+
+- `/docs/handoff/hand-off.md`  
+Complete system hand-off document for future maintainers  
+
+---
+
+## 🧠 Architecture Overview
+
+The system is built using a scene-based architecture in Godot:
+
+- `main.gd` → central game controller
+- Player → input and movement
+- Objects → spawning and collision handling
+- UI → HUD and menu
+- Audio → background music and sound effects
+
+For detailed architecture:
+→ See `/docs/architecture/architecture.md`
+
+---
+
+## ⚠️ Known Limitations
+
+- UI scaling issues on larger screen sizes
+- Centralized logic in `main.gd`
+- Limited advanced/integration test coverage
+- Keyboard-only input (no controller support)
+
+---
+
+## 🔮 Future Improvements
+
+- Refactor into modular managers (GameManager, AudioManager, etc.)
+- Improve UI responsiveness and scaling
+- Expand test coverage (integration tests)
+- Enhance gameplay balancing and difficulty scaling
+
+---
+
+## 👥 Team
+
+- Olga  
+- Mario  
+- Rajesh  
+
+---
+
+## 📌 Summary
+
+SpaceHunter is a fully functional arcade game that demonstrates:
+- Complete gameplay system
+- Integrated testing and CI/CD
+- Structured documentation and release management
+- Professional hand-off readiness
+
+This project reflects a production-oriented approach to software engineering within a game development context.
 
 ### Documentation
 
@@ -197,6 +232,10 @@ gdlint.
 │ ├─ deployment/
 │ │ └─ beta-deploy.md                 # Instructions to run/deploy the beta version
 │ ├─ final/
+│ │ └─ final-defense.md               # Final technical defend snapshot
+│ │ └─ final-presentation.md          # Final team presentation
+│ │ └─ final-repo-check.md            # Production-Ready Repository Check 
+│ │ └─ final-retrospective.md         # Final Team Retrospective 
 │ │ └─ week13-architecture.md         # Updated Architecture Decision Record diagram (system design)
 │ │ └─ week13-observability.md        # Week 13 application observability
 │ │ └─ week13-refactoring.md          # Refactoring and code health improvements
@@ -205,8 +244,15 @@ gdlint.
 │ │ └─ week14-repo-polish.md          # Week 14 Polished Repo
 │ │ └─ week14-runbook.md              # Week 14 Deployment / runbook verification
 │ │ └─ week14-triage.md               # Week 14 Final bug triage and fix process
+│ │ └─ week15-contributions.md        # Week 15 Contribution document
+│ │ └─ week15-handoff-status.md       # Week 15 Hand off status document
+│ │ └─ week15-peer-eval-confirmation.md        # Week 15 Peer evaluation confirmation
+│ │ └─ week15-presentaiton-plan.md    # Week 15 Presentation plan outline
+│ │ └─ week15-qa.md                   # Week 15 QA document
+│ │ └─ week15-sprint.md               # Week 15 Sprint oultine and status
 │ ├─ handoff/
 │ │ └─ hand-off-draft.md              # Project hand off draft document
+│ │ └─ hand-off.md                    # Project hand off document
 │ ├─ mvp/
 │ │ ├─ demo-readiness.md              # Demo preparation
 │ │ ├─ explicit-non-goals.md          # Mentioning explicit non goals for the project
@@ -218,6 +264,7 @@ gdlint.
 │ │ ├─ scope-lock.md                  # Locked scope and risks
 │ ├─ releases/
 │ │ └─ beta-release.md                # Beta release notes (features, limitations, scope)
+│ │ └─ final-release.md               # FInal release notes
 │ │ └─ release-candidate.md           # Release Candidate Summary rc-v0.9
 │ ├─ security/
 │ │ ├─ auth.md                        # Auth security documentation
